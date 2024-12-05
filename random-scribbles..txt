@@ -1,0 +1,56 @@
+the normal bits for ethernet frame are 512
+this is just demo for network switch so we're making sure the principal is correct
+Data length will be trimmed in some parts for easier readibility
+
+CONST IN FRAME
+
+preamble (0x55) x 7 - originally 7 bytes, trim to 2 bytes
+01010101 01010101 01010101 01010101 01010101 01010101 01010101
+
+new preamble (0x55) x 1 
+01010101
+
+sfd (0xAB) -ipv4
+10101011
+
+ethertype (0x0800) -ipv4
+00001000 00000000
+
+fcs (0xFFFFFFFF) - intial value, trim to 0xF
+11111111 11111111 11111111 11111111
+
+fcs (0xF) - 8bits for demo
+11111111
+
+fcs would be change overtime by crc32 algo.
+
+initial frame (trimmed preamble,: 
+Preamble __SFD___                                  ____IPV4-init____                             ____________Inital FCS_____________
+
+01010101 10101011 6-bytes Dest-MAC 6-bytes Src-MAC 00001000 00000000 [ PAYLOAD 1 BYTES FOR EXAM] 11111111 11111111 11111111 11111111
+
+
+CRC check on end-devices, switch only forward.
+
+CRC for 32 bit
+====================
+CRC const for XOR : 
+0x4C11DB7 -- 0100110000010001110110110111
+
+CRC32 steps ex to check 8 bits data: 
+loop 8 times : 
+	shift 1bit
+	xor 0x4C11DB7
+end
+
+CRC for 8 bit for the demo 
+====================
+CRC const for XOR :
+0x8C -- 10001100
+
+CRC8 steps ex to check 8 bits data: 
+loop 8 times : 
+	shift 1bit
+	xor 0x8C
+end
+
