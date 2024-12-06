@@ -1,0 +1,56 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dA:/0-COLLEGE/Term3/Perancangan Sistem Digital/CS/CS9
+Eswram
+Z0 w1733478501
+Z1 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 36
+Z5 dA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro
+Z6 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd
+Z7 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd
+l0
+L7 1
+ViQEQHY?U=IBTzF7DAH=D53
+!s100 YYDa?9non3mW@@VmK7]Fi3
+Z8 OV;C;2020.1;71
+32
+Z9 !s110 1733479573
+!i10b 1
+Z10 !s108 1733479573.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd|
+Z12 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd|
+!i113 1
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Artl
+R1
+R2
+R3
+R4
+Z15 DEx4 work 5 swram 0 22 iQEQHY?U=IBTzF7DAH=D53
+!i122 36
+l104
+Z16 L18 117
+Z17 VFIF@??zL2EDnXB0I;UeZm0
+Z18 !s100 DZe582f0ezDi:ESIi?;kK2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
