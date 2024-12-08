@@ -88,9 +88,10 @@ architecture rtl of SwRAM is
         variable ram : RAM_Arr := rams;
     begin
         for i in 1 to total_port-1 loop
-            if (ram(i) = "100100111100111111010011010110101100000010101101") then 
+            if (ram(i) = macIn) then 
                 portoutd := std_logic_vector(to_unsigned(i, 4));
                 hitd := "11";
+                exit; -- exit the loop if found
             end if;
         end loop;
         if (hitd = "00") then 
@@ -113,6 +114,8 @@ begin
         elsif rising_edge(main_clk) then
             case state is
                 when LOAD =>
+                    port_out <= (others => '0');
+                    hit_flag <= "00";
                     macIn <= mac_in;
                     fill_ram_from_file(RAM, "arpTable.txt");
                     state <= ACTIVE;
@@ -135,6 +138,8 @@ begin
                     state <= COMPLETE;
                 when COMPLETE =>
                     state <= ACTIVE;
+                when others =>
+                    state <= LOAD;
             end case;
         end if;
     end process;
