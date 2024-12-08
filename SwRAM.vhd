@@ -4,19 +4,19 @@ use ieee.numeric_std.all;
 use STD.textio.all;
 use ieee.std_logic_textio.all;
 
-entity SwRAM is --simple ram to buffer;
+entity SwCAM is --simple ram to buffer;
     port (
         main_clk    :   in  std_logic;
         main_rst    :   in  std_logic;
-        r_bit      :   in  std_logic;
-        w_bit       :   in  std_logic;
+        r_bit       :   inout  std_logic;
+        w_bit       :   inout  std_logic;
         mac_in      :   in  std_logic_vector(47 downto 0);
         port_out    :   out std_logic_vector(3 downto 0); --assuming a switch with max 24 ethernet-port, so max bit is 2^5
         hit_flag    :   out std_logic_vector(1 downto 0) --if found '11', not found '10';
     );
-end entity SwRAM;
+end entity SwCAM;
 
-architecture rtl of SwRAM is
+architecture rtl of SwCAM is
     constant max_port : integer := 12;
     type State_Type is (LOAD, ACTIVE, READ, WRITE, ASSIGN, COMPLETE);
     signal state : State_Type := LOAD;
@@ -111,6 +111,8 @@ begin
             state <= LOAD;
             port_out <= (others => '0');
             hit_flag <= "00";
+            r_bit   <= '0';
+            w_bit   <= '0';   
         elsif rising_edge(main_clk) then
             case state is
                 when LOAD =>
@@ -141,8 +143,8 @@ begin
                     state <= COMPLETE;
                 when COMPLETE =>
                     state <= ACTIVE;
-                when others =>
-                    state <= LOAD;
+                    r_bit   <= '0';
+                    w_bit   <= '0';
             end case;
         end if;
     end process;

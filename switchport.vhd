@@ -15,7 +15,7 @@ END ENTITY switchport;
 
 ARCHITECTURE rtl OF switchport IS
     CONSTANT total_port : INTEGER := 12;
-    signal frame
+    signal frames
 BEGIN
     process (inout_bit)
 
