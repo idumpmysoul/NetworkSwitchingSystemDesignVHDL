@@ -8,7 +8,7 @@ entity SwRAM is --simple ram to keep MAC-Add table
     port (
         main_clk    :   in  std_logic;
         main_rst    :   in  std_logic;
-        rw_bit      :   in  std_logic; --input port, so don't check
+        r_bit      :   in  std_logic; --input port, so don't check
         mac_in      :   in  std_logic_vector(47 downto 0);
         port_out    :   out std_logic_vector(3 downto 0); --assuming a switch with 24 ethernet-port, so max bit is 2^5
         hit_flag    :   out std_logic_vector(1 downto 0) --if found '11', not found '10';
@@ -16,10 +16,10 @@ entity SwRAM is --simple ram to keep MAC-Add table
 end entity SwRAM;
 
 architecture rtl of SwRAM is
-    constant ram_size : integer := 25;
-    type State_Type is (LOAD, ACTIVE, READ, ASSIGN, COMPLETE);
+    constant total_port : integer := 25;
+    type State_Type is (LOAD, ACTIVE, READ, WRITE, ASSIGN, COMPLETE);
     signal state : State_Type := LOAD;
-    type RAM_Arr is array (0 to ram_size-1) of std_logic_vector(47 downto 0);
+    type RAM_Arr is array (0 to total_port-1) of std_logic_vector(47 downto 0);
     signal RAM : RAM_Arr := ( --initial ram value
         0 => "010101010101010101010101010101010101010101010101", --ram(0) would be the error assigned value
         1 => "000000000000000000000000000000000000000000000000",
@@ -58,11 +58,11 @@ architecture rtl of SwRAM is
         variable value     : std_logic_vector(47 downto 0);
     begin
         ram(0) := "010101010101010101010101010101010101010101010101";
-        for i in 1 to ram_size-1 loop
+        for i in 1 to total_port-1 loop
             ram(i) := (others=>'0');
         end loop;
         -- Read the file and fill the RAM
-        for i in 1 to ram_size-1 loop
+        for i in 1 to total_port-1 loop
             if (not endfile(ram_file)) then
                 readline(ram_file, line_buffer);
                 read(line_buffer, value);
@@ -74,7 +74,7 @@ architecture rtl of SwRAM is
     end procedure;
 
     signal portOut     : std_logic_vector(3 downto 0);
-    signal hitFlag     : std_logic_vector(1 downto 0);
+    signal hitFlag     : std_logic_vector(1 downto 0) := "00";
     signal macIn       : std_logic_vector(47 downto 0);
     -- Procedure to find MAC
     procedure find_MAC(
@@ -87,22 +87,24 @@ architecture rtl of SwRAM is
         variable hitd     : std_logic_vector(1 downto 0);
         variable ram : RAM_Arr := rams;
     begin
-        for i in 1 to ram_size-1 loop
+        for i in 1 to total_port-1 loop
             if (ram(i) = "100100111100111111010011010110101100000010101101") then 
                 portoutd := std_logic_vector(to_unsigned(i, 4));
-                hitd := "11"    ;
-            else 
-                portoutd := "0000";
-                hitd := "10";
+                hitd := "11";
             end if;
         end loop;
+        if (hitd = "00") then 
+            portoutd := "0000";
+            hitd := "10";
+        end if;
         portout <= portoutd;
         hit <= hitd;
     end procedure;
-
+    signal k : integer := total_port;
 --processes
 begin
-    process (main_clk, main_rst)
+    process (main_clk, main_rst, mac_in)
+        
     begin
         if main_rst = '1' then
             state <= LOAD;
@@ -115,14 +117,19 @@ begin
                     fill_ram_from_file(RAM, "arpTable.txt");
                     state <= ACTIVE;
                 when ACTIVE =>
-                    if (rw_bit = '1') then 
+                    if (r_bit = '1') then 
                         state <= READ;
                     else state <= ACTIVE;
                     end if;
                 when READ =>
                     find_MAC(RAM, portOut, hitFlag, macIn);
-                    state <= ASSIGN;
+                    if (k > 0 and hitFlag = "00") then
+                        state <= READ;
+                        k <= k - 1;
+                    else state <= ASSIGN;
+                    end if;
                 when ASSIGN =>
+                    k <= total_port;
                     port_out <= portOut;
                     hit_Flag <= hitFlag;
                     state <= COMPLETE;

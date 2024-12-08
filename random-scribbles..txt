@@ -2,6 +2,7 @@ the normal bits for ethernet frame are 512
 this is just demo for network switch so we're making sure the principal is correct
 Data length will be trimmed in some parts for easier readibility
 
+
 CONST IN FRAME
 
 preamble (0x55) x 7 - originally 7 bytes, trim to 2 bytes
