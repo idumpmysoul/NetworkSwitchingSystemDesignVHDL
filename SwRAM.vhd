@@ -88,7 +88,7 @@ architecture rtl of SwRAM is
         variable ram : RAM_Arr := rams;
     begin
         for i in 1 to total_port-1 loop
-            if (ram(i) = "100100111100111111010011010110101100000010101101") then 
+            if (ram(i) = macIn) then 
                 portoutd := std_logic_vector(to_unsigned(i, 4));
                 hitd := "11";
             end if;
