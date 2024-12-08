@@ -9,48 +9,93 @@ z2
 !i10f 100
 cModel Technology
 dA:/0-COLLEGE/Term3/Perancangan Sistem Digital/CS/CS9
-Eswram
-Z0 w1733602766
+Eswitchport
+Z0 w1733649359
 Z1 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 44
+!i122 60
 Z5 dA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro
-Z6 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd
-Z7 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd
+Z6 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd
+Z7 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd
 l0
 L7 1
-ViQEQHY?U=IBTzF7DAH=D53
-!s100 YYDa?9non3mW@@VmK7]Fi3
+V6H7aKQD9fW8HnS^P16W7Z2
+!s100 @dm>Oe_ccmV@7dlR;9Ebi3
 Z8 OV;C;2020.1;71
 32
-Z9 !s110 1733602778
+Z9 !s110 1733649362
 !i10b 1
-Z10 !s108 1733602778.000000
-Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd|
-Z12 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd|
+Z10 !s108 1733649361.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd|
+!s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd|
 !i113 1
-Z13 o-work work -2002 -explicit
-Z14 tExplicit 1 CvgOpt 0
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
 Artl
 R1
 R2
 R3
 R4
-Z15 DEx4 work 5 swram 0 22 iQEQHY?U=IBTzF7DAH=D53
-!i122 44
-l105
-L18 124
-VIlfTTJa:jfaZa>XQO^Smf1
-!s100 OLTT==YjEmLTde`D[6IUV1
+DEx4 work 10 switchport 0 22 6H7aKQD9fW8HnS^P16W7Z2
+!i122 60
+l27
+L25 33
+VJlD8cCJnbgbl^<dKk5SiK3
+!s100 KcFBQ9kQKAWeOaYbgnWPS0
 R8
 32
 R9
 !i10b 1
 R10
 R11
-R12
+Z14 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd|
 !i113 1
+R12
 R13
-R14
+Eswram
+Z15 w1733648710
+R1
+R2
+R3
+R4
+!i122 47
+R5
+Z16 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd
+Z17 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd
+l0
+L7 1
+VgJ]EZ:iV@<E?X]k:D64L:3
+!s100 @8X]2<4?C7]RX<Fz9zI;W2
+R8
+32
+Z18 !s110 1733648714
+!i10b 1
+Z19 !s108 1733648713.000000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd|
+Z21 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd|
+!i113 1
+R12
+R13
+Artl
+R1
+R2
+R3
+R4
+DEx4 work 5 swram 0 22 gJ]EZ:iV@<E?X]k:D64L:3
+!i122 47
+l105
+L18 126
+VXLIcg:=B2E<D?l:fPFV<h2
+!s100 L`?:UQR?L1:a]QdWC6h8T1
+R8
+32
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R12
+R13

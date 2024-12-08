@@ -4,23 +4,23 @@ use ieee.numeric_std.all;
 use STD.textio.all;
 use ieee.std_logic_textio.all;
 
-entity SwRAM is --simple ram to keep MAC-Add table
+entity SwRAM is --simple ram to buffer;
     port (
         main_clk    :   in  std_logic;
         main_rst    :   in  std_logic;
-        r_bit       :   in  std_logic; --input port, so don't check
+        rw_bit      :   in  std_logic;
         mac_in      :   in  std_logic_vector(47 downto 0);
-        port_out    :   out std_logic_vector(3 downto 0); --assuming a switch with 24 ethernet-port, so max bit is 2^5
+        port_out    :   out std_logic_vector(3 downto 0); --assuming a switch with max 24 ethernet-port, so max bit is 2^5
         hit_flag    :   out std_logic_vector(1 downto 0) --if found '11', not found '10';
     );
 end entity SwRAM;
 
 architecture rtl of SwRAM is
-    constant ram_size : integer := 25;
+    constant max_port : integer := 12;
     type State_Type is (LOAD, ACTIVE, READ, WRITE, ASSIGN, COMPLETE);
     signal state : State_Type := LOAD;
-    type RAM_Arr is array (0 to total_port-1) of std_logic_vector(47 downto 0);
-    signal RAM : RAM_Arr := ( --initial ram value
+    type MAC_Arr is array (0 to max_port-1) of std_logic_vector(47 downto 0);
+    signal MAC : MAC_Arr := ( --initial ram value
         0 => "010101010101010101010101010101010101010101010101", --ram(0) would be the error assigned value
         1 => "000000000000000000000000000000000000000000000000",
         2 => "000000000000000000000000000000000000000000000000",
@@ -49,28 +49,28 @@ architecture rtl of SwRAM is
     );
     -- Procedure to fill RAM
     procedure fill_ram_from_file(
-        signal rams  : inout RAM_Arr;                      -- RAM array to be filled
-        file_name  : in string                          -- File name to read from                         
+        signal macs  : inout MAC_Arr;                      -- RAM array to be filled
+        file_name  : in string                             -- File name to read from                         
     ) is
-        variable ram : RAM_Arr;
-        file ram_file  : text open read_mode is file_name;  
-        variable line_buffer : line;                               
-        variable value     : std_logic_vector(47 downto 0);
+        variable mac            : MAC_Arr;
+        file mac_file           : text open read_mode is file_name;  
+        variable line_buffer    : line;                               
+        variable value          : std_logic_vector(47 downto 0);
     begin
-        ram(0) := "010101010101010101010101010101010101010101010101";
-        for i in 1 to total_port-1 loop
+        mac(0) := "010101010101010101010101010101010101010101010101";
+        for i in 1 to max_port-1 loop
             ram(i) := (others=>'0');
         end loop;
         -- Read the file and fill the RAM
-        for i in 1 to total_port-1 loop
-            if (not endfile(ram_file)) then
-                readline(ram_file, line_buffer);
+        for i in 1 to max_port-1 loop
+            if (not endfile(mac_file)) then
+                readline(mac_file, line_buffer);
                 read(line_buffer, value);
                 ram(i) := value;
             else exit;
             end if;
         end loop;
-        rams <= ram;
+        macs <= mac;
     end procedure;
 
     signal portOut     : std_logic_vector(3 downto 0);
@@ -87,7 +87,7 @@ architecture rtl of SwRAM is
         variable hitd     : std_logic_vector(1 downto 0);
         variable ram : RAM_Arr := rams;
     begin
-        for i in 1 to total_port-1 loop
+        for i in 1 to max_port-1 loop
             if (ram(i) = macIn) then 
                 portoutd := std_logic_vector(to_unsigned(i, 4));
                 hitd := "11";
@@ -101,7 +101,7 @@ architecture rtl of SwRAM is
         portout <= portoutd;
         hit <= hitd;
     end procedure;
-    signal k : integer := total_port;
+    signal k : integer := max_port;
 --processes
 begin
     process (main_clk, main_rst, mac_in)
@@ -117,10 +117,10 @@ begin
                     port_out <= (others => '0');
                     hit_flag <= "00";
                     macIn <= mac_in;
-                    fill_ram_from_file(RAM, "arpTable.txt");
+                    fill_ram_from_file(RAM, "macTable.txt");
                     state <= ACTIVE;
                 when ACTIVE =>
-                    if (r_bit = '1') then 
+                    if (rw_bit = '1') then 
                         state <= READ;
                     else state <= ACTIVE;
                     end if;
@@ -131,8 +131,10 @@ begin
                         k <= k - 1;
                     else state <= ASSIGN;
                     end if;
+                when WRITE => 
+                    --not now, future update;
                 when ASSIGN =>
-                    k <= total_port;
+                    k <= max_port;
                     port_out <= portOut;
                     hit_Flag <= hitFlag;
                     state <= COMPLETE;
