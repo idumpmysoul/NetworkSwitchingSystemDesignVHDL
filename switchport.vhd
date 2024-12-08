@@ -1,40 +1,25 @@
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use STD.textio.all;
+use ieee.std_logic_textio.all;
 
-entity switchport is
-    port (
-        fa01        : inout std_logic_vector(127 downto 0);
-        fa01_add    : inout std_logic_vector(47 downto 0);
-        fa02        : inout std_logic_vector(127 downto 0);
-        fa02_add    : inout std_logic_vector(47 downto 0);
-        fa03        : inout std_logic_vector(127 downto 0);
-        fa03_add    : inout std_logic_vector(47 downto 0);
-        fa04        : inout std_logic_vector(127 downto 0);
-        fa04_add    : inout std_logic_vector(47 downto 0);
-        fa05        : inout std_logic_vector(127 downto 0);
-        fa05_add    : inout std_logic_vector(47 downto 0);
-        fa06        : inout std_logic_vector(127 downto 0);
-        fa06_add    : inout std_logic_vector(47 downto 0);
-        fa07        : inout std_logic_vector(127 downto 0);
-        fa07_add    : inout std_logic_vector(47 downto 0);
-        fa08        : inout std_logic_vector(127 downto 0);
-        fa08_add    : inout std_logic_vector(47 downto 0);
-        fa09        : inout std_logic_vector(127 downto 0);
-        fa09_add    : inout std_logic_vector(47 downto 0);
-        fa010        : inout std_logic_vector(127 downto 0);
-        fa010_add    : inout std_logic_vector(47 downto 0);
-        fa011        : inout std_logic_vector(127 downto 0);
-        fa011_add    : inout std_logic_vector(47 downto 0);
-        fa012        : inout std_logic_vector(127 downto 0);
-        fa012_add    : inout std_logic_vector(47 downto 0);
+ENTITY switchport IS
+    PORT (
+        inout_bit   : in std_logic;
+        port_id     : inout std_logic_vector(3 downto 0); --max 24 port
+        frame       : inout STD_LOGIC_VECTOR(7 DOWNTO 0);
+        MAC         : INOUT STD_LOGIC_VECTOR(47 DOWNTO 0);
     );
-end entity switchport;
+END ENTITY switchport;
 
-architecture rtl of switchport is
-    
-begin
-    
-    
-    
-end architecture rtl;
+ARCHITECTURE rtl OF switchport IS
+    CONSTANT total_port : INTEGER := 12;
+    signal frame
+BEGIN
+    process (inout_bit)
+
+    begin
+        fa012_MAC <= fa0(11);
+    end process;
+END ARCHITECTURE rtl;

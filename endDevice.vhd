@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 entity endDevice is
     port (
-        frame_in     : 
+        mac_add                                                                                                                                                                                                                                                                                                                                                                                                                                  a 
     );
 end entity endDevice;
 
