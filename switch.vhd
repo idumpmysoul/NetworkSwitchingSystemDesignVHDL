@@ -128,7 +128,7 @@ ARCHITECTURE rtl OF switch IS
 
 
 BEGIN
-    SwCAM1 : SwCAM portmap (
+    SwCAM1 : SwCAM port map (
         main_clk => clk,
         main_rst => reset,
         r_bit => r_bit,
@@ -138,7 +138,7 @@ BEGIN
         hit_flag => hit_flag
     );
 
-    FrameDecoder : frame_decoder portmap (
+    FrameDecoder : frame_decoder port map (
         frame_in => input_frame;
         dest_mac => output_mac;
         src_mac  => src_mac;
@@ -146,7 +146,7 @@ BEGIN
     );
 
     --instantiation
-    fa01 : switchport portmap (
+    fa01 : switchport port map (
         inout_bit => fa01_inoutBits,
         port_id => "0001",
         data => fa01_data,
@@ -155,7 +155,7 @@ BEGIN
         frame_out => fa01_FrameOut
     );
 
-    fa02 : switchport portmap (
+    fa02 : switchport port map (
         inout_bit => fa02_inoutBits,
         port_id => "0010",
         data => fa02_data;,
@@ -164,7 +164,7 @@ BEGIN
         frame_out => fa03_FrameOut
     );
 
-    fa03 : switchport portmap (
+    fa03 : switchport port map (
         inout_bit => fa03_inoutBits,
         port_id => "0011",
         data => fa03_data,
@@ -173,7 +173,7 @@ BEGIN
         frame_out => fa03_FrameOut
     );
 
-    fa04 : switchport portmap (
+    fa04 : switchport port map (
         inout_bit => fa04_inoutBits,
         port_id => "0100",
         data => fa04_data,
@@ -182,7 +182,7 @@ BEGIN
         frame_out => fa04_FrameOut
     );
 
-    fa05 : switchport portmap (
+    fa05 : switchport port map (
         inout_bit => fa05_inoutBits,
         port_id => "0101",
         data => fa05_data,
@@ -191,7 +191,7 @@ BEGIN
         frame_out => fa05_FrameOut
     );
 
-    fa06 : switchport portmap (
+    fa06 : switchport port map (
         inout_bit => fa06_inoutBits,
         port_id => '"0110",
         data => fa06_data,
@@ -200,7 +200,7 @@ BEGIN
         frame_out => fa06_FrameOut
     );
 
-    fa07 : switchport portmap (
+    fa07 : switchport port map (
         inout_bit => fa07_inoutBits,
         port_id => "0111",
         data => fa07_data,
@@ -209,7 +209,7 @@ BEGIN
         frame_out => fa07_FrameOut
     );
 
-    fa08 : switchport portmap (
+    fa08 : switchport port map (
         inout_bit => fa08_inoutBits,
         port_id => "1000",
         data => fa08_data,
@@ -218,7 +218,7 @@ BEGIN
         frame_out => fa08_FrameOut
     );
 
-    fa09 : switchport portmap (
+    fa09 : switchport port map (
         inout_bit => fa09_inoutBits,
         port_id => "1001",
         data => fa09_data,
@@ -227,7 +227,7 @@ BEGIN
         frame_out => fa09_FrameOut
     );
 
-    fa10 : switchport portmap (
+    fa10 : switchport port map (
         inout_bit => fa010_inoutBits,
         port_id => "1010",
         data => fa010_data,
@@ -236,7 +236,7 @@ BEGIN
         frame_out => fa010_FrameOut
     );
 
-    fa11 : switchport portmap (
+    fa11 : switchport port map (
         inout_bit => fa011_inoutBits,
         port_id => "1011",
         data => fa011_data,
@@ -245,7 +245,7 @@ BEGIN
         frame_out => fa012_FrameOut
     );
 
-    fa12 : switchport portmap (
+    fa12 : switchport port map (
         inout_bit => fa012_inoutBits,
         port_id => "1100",
         data => fa012_data,
