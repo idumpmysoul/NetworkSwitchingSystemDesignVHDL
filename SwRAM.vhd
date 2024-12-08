@@ -8,7 +8,8 @@ entity SwRAM is --simple ram to buffer;
     port (
         main_clk    :   in  std_logic;
         main_rst    :   in  std_logic;
-        rw_bit      :   in  std_logic;
+        r_bit      :   in  std_logic;
+        w_bit       :   in  std_logic;
         mac_in      :   in  std_logic_vector(47 downto 0);
         port_out    :   out std_logic_vector(3 downto 0); --assuming a switch with max 24 ethernet-port, so max bit is 2^5
         hit_flag    :   out std_logic_vector(1 downto 0) --if found '11', not found '10';
@@ -104,7 +105,6 @@ architecture rtl of SwRAM is
 --processes
 begin
     process (main_clk, main_rst, mac_in)
-        
     begin
         if main_rst = '1' then
             state <= LOAD;
@@ -117,8 +117,9 @@ begin
                     fill_ram_from_file(RAM, "macTable.txt");
                     state <= ACTIVE;
                 when ACTIVE =>
-                    if (rw_bit = '1') then 
+                    if (r_bit = '1') then 
                         state <= READ;
+                    elsif (w_bit = '1') then state <= WRITE;
                     else state <= ACTIVE;
                     end if;
                 when READ =>

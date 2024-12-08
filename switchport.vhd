@@ -6,10 +6,10 @@ use ieee.std_logic_textio.all;
 
 ENTITY switchport IS
     PORT (
-        inout_bit   : in std_logic;
+        inout_bit   : in std_logic_vector(1 downto 0);
         port_id     : inout std_logic_vector(3 downto 0); --max 24 port
         frame       : inout STD_LOGIC_VECTOR(7 DOWNTO 0);
-        MAC         : INOUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+        MAC_add     : INOUT STD_LOGIC_VECTOR(47 DOWNTO 0);
     );
 END ENTITY switchport;
 
