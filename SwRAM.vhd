@@ -8,7 +8,7 @@ entity SwRAM is --simple ram to keep MAC-Add table
     port (
         main_clk    :   in  std_logic;
         main_rst    :   in  std_logic;
-        r_bit      :   in  std_logic; --input port, so don't check
+        r_bit       :   in  std_logic; --input port, so don't check
         mac_in      :   in  std_logic_vector(47 downto 0);
         port_out    :   out std_logic_vector(3 downto 0); --assuming a switch with 24 ethernet-port, so max bit is 2^5
         hit_flag    :   out std_logic_vector(1 downto 0) --if found '11', not found '10';
@@ -16,7 +16,7 @@ entity SwRAM is --simple ram to keep MAC-Add table
 end entity SwRAM;
 
 architecture rtl of SwRAM is
-    constant total_port : integer := 25;
+    constant ram_size : integer := 25;
     type State_Type is (LOAD, ACTIVE, READ, WRITE, ASSIGN, COMPLETE);
     signal state : State_Type := LOAD;
     type RAM_Arr is array (0 to total_port-1) of std_logic_vector(47 downto 0);

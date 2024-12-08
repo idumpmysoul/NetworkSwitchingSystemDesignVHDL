@@ -10,11 +10,6 @@ entity EndROM is
 end entity EndROM;
 
 architecture rtl of EndROM is
-    component register8bit is
-        port (
-            
-        );
-    end component register8bit;
 begin
     
     
