@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 use STD.textio.all;
 use ieee.std_logic_textio.all;
 
-entity SwCAM is --simple ram to buffer;
+entity SwCAM is --simple cam to buffer;
     port (
         main_clk    :   in  std_logic;
         main_rst    :   in  std_logic;
@@ -17,12 +17,12 @@ entity SwCAM is --simple ram to buffer;
 end entity SwCAM;
 
 architecture rtl of SwCAM is
-    constant max_port : integer := 12;
+    constant max_port : integer := 24;
     type State_Type is (LOAD, ACTIVE, READ, WRITE, ASSIGN, COMPLETE);
     signal state : State_Type := LOAD;
-    type MAC_Arr is array (0 to max_port-1) of std_logic_vector(47 downto 0);
-    signal MAC : MAC_Arr := ( --initial ram value
-        0 => "010101010101010101010101010101010101010101010101", --ram(0) would be the error assigned value
+    type MAC_Arr is array (0 to max_port) of std_logic_vector(47 downto 0);
+    signal MAC : MAC_Arr := ( --initial cam value
+        0 => "010101010101010101010101010101010101010101010101", --cam(0) would be the error assigned value
         1 => "000000000000000000000000000000000000000000000000",
         2 => "000000000000000000000000000000000000000000000000",
         3 => "000000000000000000000000000000000000000000000000",
@@ -48,9 +48,9 @@ architecture rtl of SwCAM is
         23 => "000000000000000000000000000000000000000000000000",
         24 => "000000000000000000000000000000000000000000000000"
     );
-    -- Procedure to fill RAM
-    procedure fill_ram_from_file(
-        signal macs  : inout MAC_Arr;                      -- RAM array to be filled
+    -- Procedure to fill CAM
+    procedure fill_cam_from_file(
+        signal macs  : inout MAC_Arr;                      -- CAM array to be filled
         file_name  : in string                             -- File name to read from                         
     ) is
         variable mac            : MAC_Arr;
@@ -59,15 +59,15 @@ architecture rtl of SwCAM is
         variable value          : std_logic_vector(47 downto 0);
     begin
         mac(0) := "010101010101010101010101010101010101010101010101";
-        for i in 1 to max_port-1 loop
-            ram(i) := (others=>'0');
+        for i in 1 to max_port loop
+            mac(i) := (others=>'0');
         end loop;
-        -- Read the file and fill the RAM
+        -- Read the file and fill the MAC
         for i in 1 to max_port-1 loop
             if (not endfile(mac_file)) then
                 readline(mac_file, line_buffer);
                 read(line_buffer, value);
-                ram(i) := value;
+                mac(i) := value;
             else exit;
             end if;
         end loop;
@@ -79,17 +79,17 @@ architecture rtl of SwCAM is
     signal macIn       : std_logic_vector(47 downto 0);
     -- Procedure to find MAC
     procedure find_MAC(
-        signal rams     : in RAM_Arr;
+        signal macs     : in MAC_Arr;
         signal portout  : out std_logic_vector(3 downto 0);
         signal hit      : out std_logic_vector(1 downto 0);
         signal macIn    : in std_logic_vector(47 downto 0)
     ) is
         variable portoutd : std_logic_vector(3 downto 0);
         variable hitd     : std_logic_vector(1 downto 0);
-        variable ram : RAM_Arr := rams;
+        variable mac : MAC_Arr := macs;
     begin
         for i in 1 to max_port-1 loop
-            if (ram(i) = macIn) then 
+            if (mac(i) = macIn) then 
                 portoutd := std_logic_vector(to_unsigned(i, 4));
                 hitd := "11";
                 exit; -- exit the loop if found
@@ -119,7 +119,7 @@ begin
                     port_out <= (others => '0');
                     hit_flag <= "00";
                     macIn <= mac_in;
-                    fill_ram_from_file(RAM, "macTable.txt");
+                    fill_cam_from_file(MAC, "macTable.txt");
                     state <= ACTIVE;
                 when ACTIVE =>
                     if (r_bit = '1') then 
@@ -128,7 +128,7 @@ begin
                     else state <= ACTIVE;
                     end if;
                 when READ =>
-                    find_MAC(RAM, portOut, hitFlag, macIn);
+                    find_MAC(MAC, portOut, hitFlag, macIn);
                     if (k > 0 and hitFlag = "00") then
                         state <= READ;
                         k <= k - 1;
@@ -145,6 +145,8 @@ begin
                     state <= ACTIVE;
                     r_bit   <= '0';
                     w_bit   <= '0';
+                when others =>
+                    state <= LOAD;
             end case;
         end if;
     end process;
