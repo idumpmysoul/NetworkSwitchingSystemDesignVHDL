@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 entity frame_decoder is -- frame decoder
   port (
     frame_in : in std_logic_vector(167 downto 0); -- Assuming 168-bit frame
-    dest_mac : out std_logic_vector(47 downto 0);
+    dest_mac : inout std_logic_vector(47 downto 0);
     src_mac  : out std_logic_vector(47 downto 0); 
     payload_byte : out std_logic_vector(7 downto 0)
   );
