@@ -21,7 +21,7 @@ ARCHITECTURE rtl OF switchport IS
     COMPONENT frame_encoder IS -- frame encoder
         PORT (
             frame_out : OUT STD_LOGIC_VECTOR(167 DOWNTO 0); -- Assuming 168-bit frame
-            dest_mac : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
+            dest_mac : INout STD_LOGIC_VECTOR(47 DOWNTO 0);
             src_mac : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
             payload_byte : IN STD_LOGIC_VECTOR(7 DOWNTO 0)
         );
@@ -41,7 +41,6 @@ BEGIN
         src_mac => tempAdd,
         payload_byte => tempPayload
     );
-
     PROCESS (inout_bit, clk)
     BEGIN
         IF rising_edge(clk) THEN
@@ -56,6 +55,7 @@ BEGIN
                     tempDest <= (OTHERS => '0');
                     tempAdd <= (OTHERS => '0');
                     tempPayload <= (OTHERS => '0');
+                    frame_out <= (OTHERS => '0');
                     frame_ready <= '0';
                 WHEN "10" => -- Receive state
                     inout_bit <= "01";
