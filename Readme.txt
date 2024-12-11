@@ -1,3 +1,0 @@
-Membuat replika dari sistem hardware Switch yang ada pada sistem jaringan komputer. Switch akan menerima packet dari beberapa input port yang dimilikinya, kemudian akan menentukan alamat pengiriman packet tersebut berdasarkan mac-address tujuan dalam arp table yang dimilikinya. 
-Model design akan mereplikasi switch yang memiliki system buffer, sehingga menggunakan structural style untuk penggunaan registers.
-Design akan berupa FSM dengan Microprogramming yang akan berperan sebagai processor dari Switch tersebut. Loop construct akan digunakan didalam Testbench bersamaan dengan Procedure/Functions untuk mereplikasi contoh input berupa packet yang akan diterima oleh switch.
