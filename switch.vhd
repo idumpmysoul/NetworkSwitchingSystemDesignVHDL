@@ -311,14 +311,16 @@ BEGIN
                 WHEN ACTIVE =>
                     IF buffer_frame(2015) = 'U' THEN
                         state <= LOAD;
+                    ELSE;
+                        input_frame <= buffer_frame(2015 DOWNTO 1848);
+                        state <= DECODE;
                     END IF;
-                    input_frame <= buffer_frame(2015 DOWNTO 1848);
-                    state <= DECODE;
                 WHEN DECODE =>
                     IF (input_frame = zeros) THEN
                         state <= complete;
+                    ELSE
+                        state <= SEARCH;
                     END IF;
-                    state <= SEARCH;
                 WHEN SEARCH =>
                     r_bit <= '1';
                     state <= HOLD;

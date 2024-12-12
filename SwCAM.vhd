@@ -11,7 +11,7 @@ entity SwCAM is --simple cam to buffer;
         r_bit       :   inout  std_logic;
         w_bit       :   inout  std_logic;
         mac_in      :   in  std_logic_vector(47 downto 0);
-        port_out    :   INout std_logic_vector(3 downto 0); --assuming a switch with max 24 ethernet-port, so max bit is 2^5
+        port_out    :   out std_logic_vector(3 downto 0); --assuming a switch with max 24 ethernet-port, so max bit is 2^5
         hit_flag    :   out std_logic_vector(1 downto 0) --if found '11', not found '10';
     );
 end entity SwCAM;
@@ -68,7 +68,8 @@ architecture rtl of SwCAM is
                 readline(mac_file, line_buffer);
                 read(line_buffer, value);
                 mac(i) := value;
-            else exit;
+            else 
+                exit;
             end if;
         end loop;
         macs <= mac;
@@ -111,8 +112,8 @@ begin
             state <= LOAD;
             port_out <= (others => '0');
             hit_flag <= "00";
-            r_bit   <= '0';
-            w_bit   <= '0';   
+            r_bit   <= 'Z';
+            w_bit   <= 'Z';
         elsif rising_edge(main_clk) then
             case state is
                 when LOAD =>
@@ -147,6 +148,8 @@ begin
                     w_bit   <= '0';
                 when others =>
                     state <= LOAD;
+                    r_bit   <= 'Z';
+                    w_bit   <= 'Z';
             end case;
         end if;
     end process;

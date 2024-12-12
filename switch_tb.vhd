@@ -30,7 +30,7 @@ ARCHITECTURE behavior OF switch_tb IS
             fa02_inoutBits : INOUT STD_LOGIC_VECTOR (1 DOWNTO 0);
             fa02_data : INOUT STD_LOGIC_VECTOR(7 DOWNTO 0);
             fa02_DestMac : INOUT STD_LOGIC_VECTOR(47 DOWNTO 0);
-            fa02_FrameOut : INOUT STD_LOGIC_VECTOR(167 DOWNTO 0);
+            fa02_FrameOut : INOUT STD_LOGIC_VECTOR(167 DOWNTO 0)
             -- Additional fa ports fa03 to fa012 are defined similarly...
         );
     END COMPONENT;
@@ -61,9 +61,9 @@ ARCHITECTURE behavior OF switch_tb IS
 
     -- File handling signals
     FILE macTable : TEXT; -- File for reading the MAC addresses
-    VARIABLE line : LINE; -- Line variable to hold each line of text
-    VARIABLE mac_address : STRING(1 TO 48); -- 48 bits, each representing a MAC address
-    VARIABLE mac_val : STD_LOGIC_VECTOR(47 DOWNTO 0); -- The MAC address in std_logic_vector format
+    SHARED VARIABLE line_var : LINE; -- Line variable to hold each line of text
+    SHARED VARIABLE mac_address : STRING(1 TO 48); -- 48 bits, each representing a MAC address
+    SHARED VARIABLE mac_val : STD_LOGIC_VECTOR(47 DOWNTO 0); -- The MAC address in std_logic_vector format
 
 BEGIN
     -- Instantiate the UUT
@@ -114,8 +114,8 @@ BEGIN
         -- Read and assign MAC addresses to each port (fa01_MAC to fa012_MAC)
         FOR i IN 1 TO 12 LOOP
             -- Read a line (MAC address) from the file
-            READLINE(macTable, line);
-            READ(line, mac_address);  -- Read the MAC address as a string
+            READLINE(macTable, line_var);
+            READ(line_var, mac_address);  -- Read the MAC address as a string
 
             -- Convert the string (binary) to a std_logic_vector for the MAC address
             mac_val := (OTHERS => '0'); -- Initialize to zero
