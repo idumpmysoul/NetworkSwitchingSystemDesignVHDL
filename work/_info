@@ -10,23 +10,23 @@ z2
 cModel Technology
 dA:/0-COLLEGE/Term3/Perancangan Sistem Digital/CS/CS9
 Eframe_decoder
-Z0 w1733899062
+Z0 w1733992485
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 90
+!i122 145
 Z4 dA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro
 Z5 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_decoder.vhd
 Z6 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_decoder.vhd
 l0
 L5 1
-VX4dknfjF@[b^Yz86NG@<T3
-!s100 ?gnoY3DeDe;M4_eBhGlR22
+VDQzXm?8h?8Im1N`TIH9X=0
+!s100 Qmb4Eg3F8?3Rb1<P=c`aQ0
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1733899185
+Z8 !s110 1733993779
 !i10b 1
-Z9 !s108 1733899185.000000
+Z9 !s108 1733993779.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_decoder.vhd|
 Z11 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_decoder.vhd|
 !i113 1
@@ -36,12 +36,12 @@ Artl
 R1
 R2
 R3
-DEx4 work 13 frame_decoder 0 22 X4dknfjF@[b^Yz86NG@<T3
-!i122 90
+DEx4 work 13 frame_decoder 0 22 DQzXm?8h?8Im1N`TIH9X=0
+!i122 145
 l15
-L14 9
-VBgDa4TmYmg=<e_JWoV2O]0
-!s100 W`0B@NV[YUX[;VWo1@g;S1
+Z14 L14 9
+Z15 VBgDa4TmYmg=<e_JWoV2O]0
+Z16 !s100 W`0B@NV[YUX[;VWo1@g;S1
 R7
 32
 R8
@@ -53,25 +53,25 @@ R11
 R12
 R13
 Eframe_encoder
-Z14 w1733899057
+Z17 w1733899057
 R1
 R2
 R3
 !i122 89
 R4
-Z15 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_encoder.vhd
-Z16 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_encoder.vhd
+Z18 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_encoder.vhd
+Z19 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_encoder.vhd
 l0
 L5 1
 VHjJhMm`6azflNzWZ_dX:@0
 !s100 TU]VI@8IZU@@@^oIIAUWi1
 R7
 32
-Z17 !s110 1733899177
+Z20 !s110 1733899177
 !i10b 1
-Z18 !s108 1733899177.000000
-Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_encoder.vhd|
-Z20 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_encoder.vhd|
+Z21 !s108 1733899177.000000
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_encoder.vhd|
+Z23 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_encoder.vhd|
 !i113 1
 R12
 R13
@@ -87,79 +87,79 @@ VYPc8iFznaTBZUiWn4:k]<2
 !s100 id`Lh_1K1bG`2bBEMI1zd0
 R7
 32
-R17
-!i10b 1
-R18
-R19
 R20
+!i10b 1
+R21
+R22
+R23
 !i113 1
 R12
 R13
 Eswcam
-Z21 w1733674222
-Z22 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+Z24 w1733992615
+Z25 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 R1
 R2
 R3
-!i122 78
+!i122 143
 R4
-Z23 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd
-Z24 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd
+Z26 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd
+Z27 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd
 l0
 L7 1
-V:E[mHbMG]Se[ELR9>:UIE2
-!s100 ^0N`Z]R8:]W3zRm6dMZRa1
+V8V]Bdem@N;>:jKo`GRmY=2
+!s100 C=?GMl;X?iO54g=obzDUn1
 R7
 32
-Z25 !s110 1733892357
+Z28 !s110 1733993774
 !i10b 1
-Z26 !s108 1733892356.000000
-Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd|
-Z28 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd|
+Z29 !s108 1733993773.000000
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd|
+Z31 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd|
 !i113 1
 R12
 R13
 Artl
-R22
+R25
 R1
 R2
 R3
-DEx4 work 5 swcam 0 22 :E[mHbMG]Se[ELR9>:UIE2
-!i122 78
+DEx4 work 5 swcam 0 22 8V]Bdem@N;>:jKo`GRmY=2
+!i122 143
 l107
 L19 135
 Ve3[gKC9B<LXCU9Mkm?mg=1
 !s100 >79?4lL@IzDT9dl494ZIV2
 R7
 32
-R25
-!i10b 1
-R26
-R27
 R28
+!i10b 1
+R29
+R30
+R31
 !i113 1
 R12
 R13
 Eswitch
-Z29 w1733955617
+Z32 w1733992628
 R1
 R2
 R3
-!i122 142
+!i122 144
 R4
-Z30 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd
-Z31 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd
+Z33 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd
+Z34 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd
 l0
 L5 1
 VAFciKJKo6j:lzF9OPd_5N3
 !s100 Q^WEf8LRff@VN690UUi5Y1
 R7
 32
-Z32 !s110 1733955678
+Z35 !s110 1733993776
 !i10b 1
-Z33 !s108 1733955678.000000
-Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd|
-Z35 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd|
+Z36 !s108 1733993776.000000
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd|
+Z38 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd|
 !i113 1
 R12
 R13
@@ -167,48 +167,48 @@ Artl
 R1
 R2
 R3
-Z36 DEx4 work 6 switch 0 22 AFciKJKo6j:lzF9OPd_5N3
-!i122 142
+DEx4 work 6 switch 0 22 AFciKJKo6j:lzF9OPd_5N3
+!i122 144
 l132
-Z37 L91 371
-Z38 V[d<3BKoN<P1kIk9AV>8aM2
-Z39 !s100 HQYkUg`e^:3<cZWiVcYDo2
+L91 371
+VP2zMRAhj2YUXF=JVH5]a<1
+!s100 57Hg_WK8]1m`4lgObMNh[2
 R7
 32
-R32
-!i10b 1
-R33
-R34
 R35
+!i10b 1
+R36
+R37
+R38
 !i113 1
 R12
 R13
 Eswitchport
-Z40 w1733952345
-R22
+Z39 w1733952345
+R25
 R1
 R2
 R3
 !i122 124
 R4
-Z41 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd
-Z42 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd
+Z40 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd
+Z41 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd
 l0
 L7 1
 VKGFJR8go9T4UgD?[T@;CQ0
 !s100 Q7n^ncAb@cXggN_=?am>80
 R7
 32
-Z43 !s110 1733952355
+Z42 !s110 1733952355
 !i10b 1
-Z44 !s108 1733952355.000000
-Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd|
-Z46 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd|
+Z43 !s108 1733952355.000000
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd|
+Z45 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd|
 !i113 1
 R12
 R13
 Artl
-R22
+R25
 R1
 R2
 R3
@@ -220,34 +220,34 @@ V`0U7h>4h`2aB]T6NUz9iR0
 !s100 z^a;Jo0GKg8KF=<j>JG[o2
 R7
 32
-R43
+R42
 !i10b 1
+R43
 R44
 R45
-R46
 !i113 1
 R12
 R13
 Eswitchport_tb
-Z47 w1733891156
+Z46 w1733891156
 R1
 R2
 R3
 !i122 80
 R4
-Z48 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport_tb.vhd
-Z49 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport_tb.vhd
+Z47 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport_tb.vhd
+Z48 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport_tb.vhd
 l0
 L5 1
 Vi9A5U]In@C;JVV^@K5UCo2
 !s100 NED0@8Qg9fETzD^=VP^Cb0
 R7
 32
-Z50 !s110 1733892397
+Z49 !s110 1733892397
 !i10b 1
-Z51 !s108 1733892397.000000
-Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport_tb.vhd|
-Z53 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport_tb.vhd|
+Z50 !s108 1733892397.000000
+Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport_tb.vhd|
+Z52 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport_tb.vhd|
 !i113 1
 R12
 R13
@@ -263,40 +263,40 @@ V[:Q`4C_P<5i;G?QCQ8ca]3
 !s100 1h6B<F[eo>6^b?CXf2`PP0
 R7
 32
-R50
+R49
 !i10b 1
+R50
 R51
 R52
-R53
 !i113 1
 R12
 R13
 Eswram
-Z54 w1733648710
-R22
+Z53 w1733648710
+R25
 R1
 R2
 R3
 !i122 47
 R4
-Z55 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd
-Z56 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd
+Z54 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd
+Z55 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd
 l0
 L7 1
 VgJ]EZ:iV@<E?X]k:D64L:3
 !s100 @8X]2<4?C7]RX<Fz9zI;W2
 R7
 32
-Z57 !s110 1733648714
+Z56 !s110 1733648714
 !i10b 1
-Z58 !s108 1733648713.000000
-Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd|
-Z60 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd|
+Z57 !s108 1733648713.000000
+Z58 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd|
+Z59 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwRAM.vhd|
 !i113 1
 R12
 R13
 Artl
-R22
+R25
 R1
 R2
 R3
@@ -308,11 +308,11 @@ VXLIcg:=B2E<D?l:fPFV<h2
 !s100 L`?:UQR?L1:a]QdWC6h8T1
 R7
 32
-R57
+R56
 !i10b 1
+R57
 R58
 R59
-R60
 !i113 1
 R12
 R13

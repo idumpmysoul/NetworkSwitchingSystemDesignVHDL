@@ -108,7 +108,7 @@ ARCHITECTURE rtl OF switch IS
             r_bit : INOUT STD_LOGIC;
             w_bit : INOUT STD_LOGIC;
             mac_in : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
-            port_out : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); --assuming a switch with 24 ethernet-port, so max bit is 2^5
+            port_out : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0); --assuming a switch with 24 ethernet-port, so max bit is 2^5
             hit_flag : OUT STD_LOGIC_VECTOR(1 DOWNTO 0) --if found '11', not found '10';
         );
     END COMPONENT SwCAM;
@@ -117,7 +117,7 @@ ARCHITECTURE rtl OF switch IS
         PORT (
             frame_in : IN STD_LOGIC_VECTOR(167 DOWNTO 0); -- Assuming 168-bit frame
             dest_mac : INOUT STD_LOGIC_VECTOR(47 DOWNTO 0);
-            src_mac : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+            src_mac : INOUT STD_LOGIC_VECTOR(47 DOWNTO 0);
             payload_byte : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
         );
     END COMPONENT frame_decoder;

@@ -11,7 +11,7 @@ entity SwCAM is --simple cam to buffer;
         r_bit       :   inout  std_logic;
         w_bit       :   inout  std_logic;
         mac_in      :   in  std_logic_vector(47 downto 0);
-        port_out    :   out std_logic_vector(3 downto 0); --assuming a switch with max 24 ethernet-port, so max bit is 2^5
+        port_out    :   INout std_logic_vector(3 downto 0); --assuming a switch with max 24 ethernet-port, so max bit is 2^5
         hit_flag    :   out std_logic_vector(1 downto 0) --if found '11', not found '10';
     );
 end entity SwCAM;
