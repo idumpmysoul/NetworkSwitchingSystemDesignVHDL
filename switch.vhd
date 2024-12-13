@@ -181,6 +181,7 @@ BEGIN
                     --buffer_frame(167 DOWNTO 0) <= fa012_FrameOut;
                     state <= ACTIVE;
                 WHEN ACTIVE =>
+                    temp_src_port <= STD_LOGIC_VECTOR(to_unsigned(buffer_index, 4));
                     decode_frame <= buffer_frame(2015 DOWNTO 1848);
                     sent_frame <= buffer_frame(2015 DOWNTO 1848);
                     state <= DECODE;
@@ -188,14 +189,13 @@ BEGIN
                     IF (decode_frame = zeros) THEN
                         state <= COMPLETE;
                     ELSIF (decode_frame(167) = 'U') THEN
-                        state <= LOAD;
+                        state <= COMPLETE;
                     ELSE
                         state <= SEARCH;
                     END IF;
                     buffer_frame(2015 DOWNTO 0) <= buffer_frame(1847 DOWNTO 0) & zeros; --shift left
                 WHEN SEARCH =>
                     enable <= '1';
-                    temp_src_port <= STD_LOGIC_VECTOR(to_unsigned(buffer_index, 4));
                     if (rw_bit_in = '1') then
                         rw_bit <= '1';
                     else rw_bit <= '0';
