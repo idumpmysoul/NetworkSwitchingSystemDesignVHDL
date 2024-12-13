@@ -31,18 +31,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity SwCAM
 -- Compiling architecture rtl of SwCAM
 
-} {} {}} {A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch_tb.vhd} {2 {vcom -work work -2002 -explicit -stats=none {A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch_tb.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity switch_tb
--- Compiling architecture behavior of switch_tb
-** Warning: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch_tb.vhd(64): (vcom-1236) Shared variables must be of a protected type.
-** Warning: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch_tb.vhd(65): (vcom-1236) Shared variables must be of a protected type.
-** Warning: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch_tb.vhd(66): (vcom-1236) Shared variables must be of a protected type.
-
 } {} {}} {A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd} {1 {vcom -work work -2002 -explicit -stats=none {A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD

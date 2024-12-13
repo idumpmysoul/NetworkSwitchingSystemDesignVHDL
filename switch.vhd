@@ -247,13 +247,13 @@ BEGIN
                             WHEN "0010" =>
                                 IF (temp_src_port /= "0010") THEN
                                     fa02_DataIn <= temp_payload;
-                                    temp_fa01_DataIn <= temp_payload;
+                                    temp_fa02_DataIn <= temp_payload;
                                 END IF;
 
                             WHEN "0011" =>
                                 IF (temp_src_port /= "0011") THEN
                                     fa03_DataIn <= temp_payload;
-                                    temp_fa01_DataIn <= temp_payload;
+                                    temp_fa03_DataIn <= temp_payload;
                                 END IF;
                         --add another conditions for port id's as new ports added.
 
@@ -263,15 +263,12 @@ BEGIN
                     END IF;
                     state <= RECEIVE;
                 WHEN RECEIVE =>
+                    
                     state <= COMPLETE;
                 WHEN COMPLETE =>
                     enable <= '0';
                     rw_bit <= '0'; --write behavior not set
-                    IF (buffer_index = port_num) THEN
-                        state <= LOAD;
-                    ELSE
-                        state <= ACTIVE;
-                    END IF;
+                    state <= ACTIVE;
                     buffer_index <= buffer_index + 1;
             END CASE;
         END IF;
