@@ -1,14 +1,15 @@
 
 State Machine - |switch|state
-Name state.COMPLETE state.RECEIVE state.FORWARD state.HOLD state.SEARCH state.DECODE state.ACTIVE state.LOAD 
-state.LOAD 0 0 0 0 0 0 0 0 
-state.ACTIVE 0 0 0 0 0 0 1 1 
-state.DECODE 0 0 0 0 0 1 0 1 
-state.SEARCH 0 0 0 0 1 0 0 1 
-state.HOLD 0 0 0 1 0 0 0 1 
-state.FORWARD 0 0 1 0 0 0 0 1 
-state.RECEIVE 0 1 0 0 0 0 0 1 
-state.COMPLETE 1 0 0 0 0 0 0 1 
+Name state.COMPLETE state.RECEIVE state.FORWARD state.ASSIGN state.HOLD state.SEARCH state.DECODE state.ACTIVE state.LOAD 
+state.LOAD 0 0 0 0 0 0 0 0 0 
+state.ACTIVE 0 0 0 0 0 0 0 1 1 
+state.DECODE 0 0 0 0 0 0 1 0 1 
+state.SEARCH 0 0 0 0 0 1 0 0 1 
+state.HOLD 0 0 0 0 1 0 0 0 1 
+state.ASSIGN 0 0 0 1 0 0 0 0 1 
+state.FORWARD 0 0 1 0 0 0 0 0 1 
+state.RECEIVE 0 1 0 0 0 0 0 0 1 
+state.COMPLETE 1 0 0 0 0 0 0 0 1 
 
 State Machine - |switch|SwCAM:SwCAM1|state
 Name state.COMPLETE state.ASSIGN state.WRITE state.READ state.ACTIVE state.LOAD 

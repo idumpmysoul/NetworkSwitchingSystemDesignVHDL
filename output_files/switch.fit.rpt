@@ -1,5 +1,5 @@
 Fitter report for switch
-Fri Dec 13 09:23:40 2024
+Fri Dec 13 13:58:53 2024
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -55,15 +55,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Failed - Fri Dec 13 09:23:40 2024           ;
+; Fitter Status                   ; Failed - Fri Dec 13 13:58:53 2024           ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; switch                                      ;
 ; Top-level Entity Name           ; switch                                      ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CGXFC7C7F23C8                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 892 / 56,480 ( 2 % )                        ;
-; Total registers                 ; 1350                                        ;
+; Logic utilization (in ALMs)     ; 1,026 / 56,480 ( 2 % )                      ;
+; Total registers                 ; 1886                                        ;
 ; Total pins                      ; 1,126 / 268 ( 420 % )                       ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 7,024,640 ( 0 % )                       ;
@@ -183,14 +183,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------+-----------------+-------+
 ; Resource                                                    ; Usage           ; %     ;
 +-------------------------------------------------------------+-----------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 892 / 56,480    ; 2 %   ;
-; ALMs needed [=A-B+C]                                        ; 892             ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 892 / 56,480    ; 2 %   ;
-;         [a] ALMs used for LUT logic and registers           ; 247             ;       ;
-;         [b] ALMs used for LUT logic                         ; 217             ;       ;
-;         [c] ALMs used for registers                         ; 428             ;       ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 1,026 / 56,480  ; 2 %   ;
+; ALMs needed [=A-B+C]                                        ; 1,026           ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 1,027 / 56,480  ; 2 %   ;
+;         [a] ALMs used for LUT logic and registers           ; 484             ;       ;
+;         [b] ALMs used for LUT logic                         ; 83              ;       ;
+;         [c] ALMs used for registers                         ; 460             ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0               ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 0 / 56,480      ; 0 %   ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 1 / 56,480      ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 56,480      ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0               ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0               ;       ;
@@ -199,24 +199,24 @@ https://fpgasoftware.intel.com/eula.
 ;                                                             ;                 ;       ;
 ; Difficulty packing design                                   ; No fit          ;       ;
 ;                                                             ;                 ;       ;
-; Total LABs:  partially or completely used                   ; 201 / 5,648     ; 4 %   ;
-;     -- Logic LABs                                           ; 201             ;       ;
+; Total LABs:  partially or completely used                   ; 215 / 5,648     ; 4 %   ;
+;     -- Logic LABs                                           ; 215             ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0               ;       ;
 ;                                                             ;                 ;       ;
-; Combinational ALUT usage for logic                          ; 928             ;       ;
+; Combinational ALUT usage for logic                          ; 1,132           ;       ;
 ;     -- 7 input functions                                    ; 0               ;       ;
-;     -- 6 input functions                                    ; 56              ;       ;
-;     -- 5 input functions                                    ; 11              ;       ;
-;     -- 4 input functions                                    ; 328             ;       ;
-;     -- <=3 input functions                                  ; 533             ;       ;
+;     -- 6 input functions                                    ; 62              ;       ;
+;     -- 5 input functions                                    ; 12              ;       ;
+;     -- 4 input functions                                    ; 333             ;       ;
+;     -- <=3 input functions                                  ; 725             ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 0               ;       ;
 ;                                                             ;                 ;       ;
-; Dedicated logic registers                                   ; 1,350           ;       ;
+; Dedicated logic registers                                   ; 1,886           ;       ;
 ;     -- By type:                                             ;                 ;       ;
-;         -- Primary logic registers                          ; 1,350 / 112,960 ; 1 %   ;
+;         -- Primary logic registers                          ; 1,886 / 112,960 ; 2 %   ;
 ;         -- Secondary logic registers                        ; 0 / 112,960     ; 0 %   ;
 ;     -- By function:                                         ;                 ;       ;
-;         -- Design implementation registers                  ; 1,350           ;       ;
+;         -- Design implementation registers                  ; 1,886           ;       ;
 ;         -- Routing optimization registers                   ; 0               ;       ;
 ;                                                             ;                 ;       ;
 ; Virtual pins                                                ; 0               ;       ;
@@ -251,10 +251,10 @@ https://fpgasoftware.intel.com/eula.
 ; Channel PLLs                                                ; 0 / 6           ; 0 %   ;
 ; Impedance control blocks                                    ; 0 / 3           ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2           ; 0 %   ;
-; Maximum fan-out                                             ; 1350            ;       ;
-; Highest non-global fan-out                                  ; 1350            ;       ;
-; Total fan-out                                               ; 9630            ;       ;
-; Average fan-out                                             ; 2.13            ;       ;
+; Maximum fan-out                                             ; 1886            ;       ;
+; Highest non-global fan-out                                  ; 1886            ;       ;
+; Total fan-out                                               ; 12173           ;       ;
+; Average fan-out                                             ; 2.31            ;       ;
 +-------------------------------------------------------------+-----------------+-------+
 
 
@@ -263,7 +263,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------+------------+----------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name             ; Pin #      ; I/O Bank ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +------------------+------------+----------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; clk              ; Unassigned ; --       ; 1350                  ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; clk              ; Unassigned ; --       ; 1886                  ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
 ; fa01_DestMac[0]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
 ; fa01_DestMac[10] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
 ; fa01_DestMac[11] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
@@ -579,7 +579,7 @@ https://fpgasoftware.intel.com/eula.
 ; fa03_Payload[5]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
 ; fa03_Payload[6]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
 ; fa03_Payload[7]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; reset            ; Unassigned ; --       ; 350                   ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; reset            ; Unassigned ; --       ; 434                   ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
 ; rw_bit_in        ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
 +------------------+------------+----------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
@@ -4177,11 +4177,11 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+------------+------+--------------+-------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Entity Name ; Library Name ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+------------+------+--------------+-------------------------+-------------+--------------+
-; |switch                    ; 761.5 (308.1)        ; 892.0 (348.0)                    ; 130.5 (39.9)                                      ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 928 (208)           ; 1350 (631)                ; 0 (0)         ; 0                 ; 0          ; 1126 ; 0            ; |switch                 ; switch      ; work         ;
-;    |SwCAM:SwCAM1|          ; 61.7 (61.7)          ; 73.2 (73.2)                      ; 11.4 (11.4)                                       ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 94 (94)             ; 91 (91)                   ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |switch|SwCAM:SwCAM1    ; SwCAM       ; work         ;
-;    |switchport:fa01|       ; 130.6 (130.6)        ; 157.2 (157.2)                    ; 26.5 (26.5)                                       ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (209)           ; 210 (210)                 ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |switch|switchport:fa01 ; switchport  ; work         ;
-;    |switchport:fa02|       ; 131.1 (131.1)        ; 157.7 (157.7)                    ; 26.5 (26.5)                                       ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (209)           ; 210 (210)                 ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |switch|switchport:fa02 ; switchport  ; work         ;
-;    |switchport:fa03|       ; 129.8 (129.8)        ; 156.0 (156.0)                    ; 26.2 (26.2)                                       ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 208 (208)           ; 208 (208)                 ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |switch|switchport:fa03 ; switchport  ; work         ;
+; |switch                    ; 987.0 (540.5)        ; 1025.5 (560.0)                   ; 38.5 (19.5)                                       ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1132 (412)          ; 1886 (1168)               ; 0 (0)         ; 0                 ; 0          ; 1126 ; 0            ; |switch                 ; switch      ; work         ;
+;    |SwCAM:SwCAM1|          ; 68.6 (68.6)          ; 72.8 (72.8)                      ; 4.2 (4.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 94 (94)             ; 90 (90)                   ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |switch|SwCAM:SwCAM1    ; SwCAM       ; work         ;
+;    |switchport:fa01|       ; 126.5 (126.5)        ; 131.5 (131.5)                    ; 5.0 (5.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (209)           ; 210 (210)                 ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |switch|switchport:fa01 ; switchport  ; work         ;
+;    |switchport:fa02|       ; 126.3 (126.3)        ; 131.3 (131.3)                    ; 5.0 (5.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (209)           ; 210 (210)                 ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |switch|switchport:fa02 ; switchport  ; work         ;
+;    |switchport:fa03|       ; 125.0 (125.0)        ; 129.8 (129.8)                    ; 4.9 (4.9)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 208 (208)           ; 208 (208)                 ; 0 (0)         ; 0                 ; 0          ; 0    ; 0            ; |switch|switchport:fa03 ; switchport  ; work         ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+------------+------+--------------+-------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -5651,26 +5651,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                        ; Location   ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------+------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; SwCAM:SwCAM1|Selector2~1    ; Unassigned ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; SwCAM:SwCAM1|hitFlag[0]~0   ; Unassigned ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; SwCAM:SwCAM1|Selector4~0    ; Unassigned ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; SwCAM:SwCAM1|hitFlag[1]~0   ; Unassigned ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; SwCAM:SwCAM1|k[4]~0         ; Unassigned ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; SwCAM:SwCAM1|macIn[47]~0    ; Unassigned ; 48      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; buffer_frame[1848]~0        ; Unassigned ; 210     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; clk                         ; Unassigned ; 1350    ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; decode_frame[56]~0          ; Unassigned ; 105     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; clk                         ; Unassigned ; 1886    ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; decode_frame[56]~0          ; Unassigned ; 109     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; fa01_DataIn[0]~0            ; Unassigned ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; fa01_FrameOut[0]~0          ; Unassigned ; 438     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; fa01_InoutBit               ; Unassigned ; 210     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; fa02_DataIn[0]~0            ; Unassigned ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; fa03_DataIn[0]~0            ; Unassigned ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; fa03_InoutBit               ; Unassigned ; 418     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; reset                       ; Unassigned ; 350     ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
+; reset                       ; Unassigned ; 434     ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
 ; state.ACTIVE                ; Unassigned ; 148     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; state.COMPLETE              ; Unassigned ; 35      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; state.ASSIGN                ; Unassigned ; 87      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; state.COMPLETE              ; Unassigned ; 36      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
 ; state.DECODE                ; Unassigned ; 318     ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; state.FORWARD               ; Unassigned ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; state.HOLD                  ; Unassigned ; 5       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; state.FORWARD               ; Unassigned ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; state.HOLD                  ; Unassigned ; 34      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
 ; state.LOAD                  ; Unassigned ; 139     ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
 ; switchport:fa01|frame_ready ; Unassigned ; 313     ; Async. clear, Latch enable ; no     ; --                   ; --               ; --                        ;
 ; switchport:fa02|frame_ready ; Unassigned ; 625     ; Async. clear, Latch enable ; no     ; --                   ; --               ; --                        ;
-; temp_src_port[0]~0          ; Unassigned ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 +-----------------------------+------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -5679,7 +5682,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+---------+
 ; Name                        ; Fan-Out ;
 +-----------------------------+---------+
-; clk~input                   ; 1350    ;
+; clk~input                   ; 1886    ;
 ; switchport:fa02|frame_ready ; 625     ;
 +-----------------------------+---------+
 
@@ -6929,607 +6932,104 @@ Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Ass
 Critical Warning (169085): No exact pin location assignment(s) for 1126 pins of 1126 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
 Error (169281): There are 318 IO input pads in the design, but only 256 IO input pad locations available on the device.
 Error (169282): There are 808 IO output pads in the design, but only 256 IO output pad locations available on the device.
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:00
-Warning (169069): Following 594 pins have nothing, GND, or VCC driving datain port -- changes to this connectivity may change fitting results
-    Info (169070): Pin sent_frame[40] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[41] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[42] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[43] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[44] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[45] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[46] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[47] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[48] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[49] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[50] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[52] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[53] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[54] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[55] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[154] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[156] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[158] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[161] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[163] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[165] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin sent_frame[167] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin dest_port[0] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_port[1] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_port[2] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_port[3] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[0] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[1] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[2] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[3] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[4] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[5] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[6] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[7] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[8] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[9] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[10] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[11] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[12] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[13] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[14] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[15] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[16] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[17] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[18] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[19] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[20] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[21] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[22] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[23] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[24] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[25] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[26] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[27] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[28] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[29] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[30] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[31] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[32] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[33] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[34] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[35] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[36] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[37] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[38] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[39] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[40] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[41] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[42] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[43] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[44] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[45] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[46] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin dest_mac[47] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 152
-    Info (169070): Pin fa01_FrameOut[0] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[1] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[2] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[3] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[4] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[5] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[6] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[7] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[8] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[9] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[10] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[11] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[12] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[13] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[14] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[15] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[16] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[17] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[18] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[19] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[20] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[21] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[22] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[23] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[24] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[25] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[26] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[27] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[28] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[29] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[30] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[31] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[32] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[33] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[34] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[35] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[36] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[37] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[38] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[39] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[40] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[41] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[42] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[43] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[44] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[45] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[46] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[47] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[48] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[49] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[50] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[51] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[52] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[53] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[54] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[55] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[56] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[57] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[58] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[59] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[60] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[61] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[62] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[63] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[64] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[65] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[66] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[67] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[68] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[69] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[70] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[71] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[72] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[73] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[74] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[75] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[76] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[77] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[78] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[79] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[80] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[81] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[82] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[83] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[84] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[85] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[86] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[87] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[88] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[89] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[90] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[91] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[92] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[93] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[94] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[95] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[96] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[97] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[98] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[99] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[100] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[101] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[102] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[103] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[104] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[105] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[106] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[107] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[108] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[109] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[110] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[111] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[112] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[113] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[114] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[115] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[116] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[117] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[118] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[119] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[120] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[121] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[122] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[123] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[124] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[125] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[126] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[127] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[128] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[129] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[130] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[131] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[132] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[133] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[134] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[135] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[136] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[137] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[138] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[139] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[140] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[141] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[142] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[143] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[144] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[145] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[146] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[147] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[148] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[149] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[150] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[151] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[152] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[153] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[154] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[155] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[156] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[157] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[158] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[159] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[160] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[161] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[162] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[163] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[164] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[165] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[166] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa01_FrameOut[167] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
-    Info (169070): Pin fa02_DataIn[0] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa02_DataIn[1] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa02_DataIn[2] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa02_DataIn[3] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa02_DataIn[4] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa02_DataIn[5] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa02_DataIn[6] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa02_DataIn[7] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa02_FrameOut[0] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[1] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[2] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[3] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[4] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[5] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[6] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[7] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[8] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[9] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[10] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[11] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[12] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[13] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[14] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[15] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[16] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[17] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[18] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[19] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[20] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[21] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[22] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[23] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[24] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[25] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[26] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[27] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[28] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[29] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[30] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[31] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[32] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[33] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[34] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[35] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[36] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[37] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[38] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[39] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[40] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[41] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[42] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[43] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[44] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[45] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[46] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[47] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[48] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[49] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[50] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[51] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[52] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[53] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[54] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[55] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[56] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[57] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[58] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[59] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[60] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[61] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[62] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[63] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[64] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[65] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[66] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[67] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[68] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[69] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[70] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[71] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[72] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[73] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[74] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[75] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[76] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[77] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[78] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[79] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[80] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[81] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[82] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[83] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[84] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[85] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[86] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[87] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[88] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[89] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[90] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[91] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[92] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[93] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[94] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[95] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[96] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[97] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[98] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[99] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[100] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[101] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[102] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[103] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[104] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[105] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[106] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[107] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[108] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[109] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[110] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[111] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[112] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[113] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[114] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[115] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[116] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[117] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[118] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[119] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[120] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[121] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[122] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[123] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[124] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[125] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[126] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[127] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[128] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[129] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[130] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[131] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[132] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[133] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[134] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[135] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[136] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[137] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[138] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[139] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[140] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[141] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[142] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[143] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[144] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[145] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[146] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[147] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[148] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[149] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[150] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[151] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[152] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[153] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[154] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[155] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[156] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[157] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[158] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[159] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[160] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[161] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[162] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[163] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[164] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[165] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[166] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa02_FrameOut[167] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
-    Info (169070): Pin fa03_DataIn[0] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa03_DataIn[1] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa03_DataIn[2] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa03_DataIn[3] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa03_DataIn[4] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa03_DataIn[5] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa03_DataIn[6] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa03_DataIn[7] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 154
-    Info (169070): Pin fa03_FrameOut[0] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[1] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[2] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[3] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[4] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[5] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[6] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[7] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[8] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[9] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[10] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[11] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[12] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[13] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[14] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[15] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[16] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[17] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[18] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[19] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[20] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[21] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[22] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[23] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[24] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[25] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[26] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[27] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[28] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[29] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[30] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[31] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[32] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[33] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[34] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[35] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[36] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[37] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[38] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[39] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[40] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[41] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[42] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[43] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[44] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[45] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[46] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[47] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[48] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[49] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[50] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[51] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[52] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[53] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[54] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[55] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[56] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[57] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[58] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[59] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[60] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[61] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[62] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[63] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[64] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[65] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[66] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[67] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[68] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[69] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[70] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[71] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[72] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[73] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[74] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[75] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[76] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[77] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[78] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[79] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[80] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[81] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[82] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[83] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[84] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[85] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[86] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[87] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[88] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[89] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[90] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[91] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[92] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[93] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[94] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[95] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[96] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[97] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[98] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[99] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[100] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[101] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[102] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[103] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[104] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[105] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[106] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[107] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[108] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[109] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[110] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[111] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[112] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[113] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[114] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[115] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[116] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[117] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[118] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[119] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[120] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[121] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[122] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[123] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[124] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[125] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[126] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[127] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[128] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[129] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[130] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[131] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[132] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[133] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[134] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[135] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[136] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[137] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[138] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[139] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[140] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[141] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[142] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[143] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[144] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[145] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[146] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[147] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[148] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[149] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[150] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[151] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[152] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[153] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[154] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[155] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[156] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[157] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[158] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[159] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[160] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[161] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[162] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[163] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[164] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[165] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[166] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
-    Info (169070): Pin fa03_FrameOut[167] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:01
+Warning (169069): Following 91 pins have nothing, GND, or VCC driving datain port -- changes to this connectivity may change fitting results
+    Info (169070): Pin sent_frame[40] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[41] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[42] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[43] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[44] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[45] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[46] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[47] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[48] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[49] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[50] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[52] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[53] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[54] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[55] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[154] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[156] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[158] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[161] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[163] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[165] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin sent_frame[167] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin dest_port[1] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin dest_port[2] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin dest_port[3] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[40] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[41] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[42] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[43] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[44] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[45] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[46] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[47] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[48] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[49] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[50] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[52] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[53] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[54] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[55] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[154] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[156] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[158] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[161] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[163] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[165] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa01_FrameOut[167] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[40] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[41] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[42] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[43] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[44] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[45] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[46] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[47] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[48] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[49] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[50] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[52] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[53] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[54] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[55] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[154] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[156] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[158] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[161] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[163] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[165] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa02_FrameOut[167] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[40] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[41] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[42] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[43] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[44] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[45] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[46] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[47] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[48] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[49] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[50] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[52] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[53] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[54] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[55] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[154] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[156] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[158] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[161] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[163] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[165] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
+    Info (169070): Pin fa03_FrameOut[167] has GND driving its datain port File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 158
 Error (11802): Can't fit design in device. Modify your design to reduce resources, or choose a larger device. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number.
 Error: Quartus Prime Fitter was unsuccessful. 3 errors, 5 warnings
-    Error: Peak virtual memory: 5131 megabytes
-    Error: Processing ended: Fri Dec 13 09:23:41 2024
-    Error: Elapsed time: 00:00:03
+    Error: Peak virtual memory: 5132 megabytes
+    Error: Processing ended: Fri Dec 13 13:58:53 2024
+    Error: Elapsed time: 00:00:02
     Error: Total CPU time (on all processors): 00:00:01
 
 
