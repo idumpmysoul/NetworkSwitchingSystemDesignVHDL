@@ -1,5 +1,5 @@
 Analysis & Synthesis report for switch
-Thu Dec 12 15:37:20 2024
+Fri Dec 13 08:59:52 2024
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu Dec 12 15:37:20 2024           ;
+; Analysis & Synthesis Status ; Failed - Fri Dec 13 08:59:52 2024           ;
 ; Quartus Prime Version       ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name               ; switch                                      ;
 ; Top-level Entity Name       ; switch                                      ;
@@ -161,7 +161,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Thu Dec 12 15:37:13 2024
+    Info: Processing started: Fri Dec 13 08:59:45 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off switch -c switch
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -169,7 +169,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file switchp
     Info (12022): Found design unit 1: switchport-rtl File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd Line: 19
     Info (12023): Found entity 1: switchport File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switchport.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file swcam.vhd
-    Info (12022): Found design unit 1: SwCAM-rtl File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd Line: 19
+    Info (12022): Found design unit 1: SwCAM-rtl File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd Line: 18
     Info (12023): Found entity 1: SwCAM File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file frame_encoder.vhd
     Info (12022): Found design unit 1: frame_encoder-rtl File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_encoder.vhd Line: 14
@@ -178,136 +178,91 @@ Info (12021): Found 2 design units, including 1 entities, in source file frame_d
     Info (12022): Found design unit 1: frame_decoder-rtl File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_decoder.vhd Line: 14
     Info (12023): Found entity 1: frame_decoder File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/frame_decoder.vhd Line: 5
 Warning (12125): Using design file switch.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: switch-rtl File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 91
+    Info (12022): Found design unit 1: switch-rtl File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 41
     Info (12023): Found entity 1: switch File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 5
 Info (12127): Elaborating entity "switch" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at switch.vhd(131): used explicit default value for signal "zeros" because signal was never assigned a value File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 131
-Warning (10631): VHDL Process Statement warning at switch.vhd(271): inferring latch(es) for signal or variable "src_mac", which holds its previous value in one or more paths through the process File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Warning (10631): VHDL Process Statement warning at switch.vhd(271): inferring latch(es) for signal or variable "dest_mac", which holds its previous value in one or more paths through the process File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Warning (10631): VHDL Process Statement warning at switch.vhd(271): inferring latch(es) for signal or variable "dest_port", which holds its previous value in one or more paths through the process File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Warning (10631): VHDL Process Statement warning at switch.vhd(271): inferring latch(es) for signal or variable "output_payload", which holds its previous value in one or more paths through the process File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "output_payload[0]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "output_payload[1]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "output_payload[2]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "output_payload[3]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "output_payload[4]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "output_payload[5]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "output_payload[6]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "output_payload[7]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_port[0]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_port[1]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_port[2]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_port[3]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[0]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[1]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[2]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[3]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[4]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[5]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[6]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[7]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[8]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[9]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[10]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[11]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[12]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[13]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[14]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[15]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[16]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[17]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[18]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[19]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[20]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[21]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[22]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[23]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[24]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[25]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[26]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[27]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[28]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[29]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[30]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[31]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[32]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[33]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[34]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[35]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[36]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[37]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[38]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[39]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[40]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[41]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[42]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[43]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[44]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[45]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[46]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "dest_mac[47]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[0]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[1]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[2]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[3]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[4]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[5]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[6]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[7]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[8]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[9]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[10]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[11]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[12]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[13]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[14]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[15]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[16]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[17]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[18]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[19]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[20]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[21]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[22]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[23]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[24]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[25]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[26]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[27]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[28]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[29]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[30]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[31]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[32]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[33]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[34]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[35]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[36]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[37]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[38]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[39]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[40]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[41]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[42]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[43]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[44]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[45]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[46]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Info (10041): Inferred latch for "src_mac[47]" at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Error (10028): Can't resolve multiple constant drivers for net "output_payload[7]" at switch.vhd(143) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 143
-Error (10029): Constant driver at switch.vhd(271) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 271
-Error (10028): Can't resolve multiple constant drivers for net "output_payload[6]" at switch.vhd(143) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 143
-Error (10028): Can't resolve multiple constant drivers for net "output_payload[5]" at switch.vhd(143) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 143
-Error (10028): Can't resolve multiple constant drivers for net "output_payload[4]" at switch.vhd(143) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 143
-Error (10028): Can't resolve multiple constant drivers for net "output_payload[3]" at switch.vhd(143) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 143
-Error (10028): Can't resolve multiple constant drivers for net "output_payload[2]" at switch.vhd(143) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 143
-Error (10028): Can't resolve multiple constant drivers for net "output_payload[1]" at switch.vhd(143) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 143
-Error (10028): Can't resolve multiple constant drivers for net "output_payload[0]" at switch.vhd(143) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 143
+Warning (10541): VHDL Signal Declaration warning at switch.vhd(22): used implicit default value for signal "fa01_FrameOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 22
+Warning (10541): VHDL Signal Declaration warning at switch.vhd(29): used implicit default value for signal "fa02_FrameOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 29
+Warning (10541): VHDL Signal Declaration warning at switch.vhd(36): used implicit default value for signal "fa03_FrameOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 36
+Warning (10540): VHDL Signal Declaration warning at switch.vhd(96): used explicit default value for signal "zeros" because signal was never assigned a value File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at switch.vhd(148): inferring latch(es) for signal or variable "dest_mac", which holds its previous value in one or more paths through the process File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Warning (10631): VHDL Process Statement warning at switch.vhd(148): inferring latch(es) for signal or variable "dest_port", which holds its previous value in one or more paths through the process File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_port[0]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_port[1]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_port[2]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_port[3]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[0]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[1]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[2]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[3]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[4]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[5]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[6]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[7]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[8]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[9]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[10]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[11]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[12]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[13]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[14]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[15]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[16]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[17]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[18]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[19]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[20]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[21]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[22]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[23]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[24]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[25]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[26]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[27]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[28]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[29]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[30]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[31]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[32]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[33]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[34]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[35]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[36]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[37]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[38]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[39]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[40]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[41]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[42]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[43]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[44]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[45]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[46]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Info (10041): Inferred latch for "dest_mac[47]" at switch.vhd(148) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 148
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa01_DataIn[7]" at switch.vhd(117) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 117
+Error (10029): Constant driver at switch.vhd(150) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 150
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa01_DataIn[6]" at switch.vhd(117) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 117
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa01_DataIn[5]" at switch.vhd(117) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 117
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa01_DataIn[4]" at switch.vhd(117) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 117
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa01_DataIn[3]" at switch.vhd(117) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 117
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa01_DataIn[2]" at switch.vhd(117) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 117
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa01_DataIn[1]" at switch.vhd(117) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 117
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa01_DataIn[0]" at switch.vhd(117) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 117
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa02_DataIn[7]" at switch.vhd(127) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 127
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa02_DataIn[6]" at switch.vhd(127) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 127
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa02_DataIn[5]" at switch.vhd(127) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 127
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa02_DataIn[4]" at switch.vhd(127) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 127
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa02_DataIn[3]" at switch.vhd(127) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 127
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa02_DataIn[2]" at switch.vhd(127) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 127
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa02_DataIn[1]" at switch.vhd(127) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 127
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa02_DataIn[0]" at switch.vhd(127) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 127
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa03_DataIn[7]" at switch.vhd(137) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 137
+Error (10028): Can't resolve multiple constant drivers for net "temp_fa03_DataIn[6]" at switch.vhd(137) File: A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd Line: 137
 Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 10 errors, 7 warnings
-    Error: Peak virtual memory: 4885 megabytes
-    Error: Processing ended: Thu Dec 12 15:37:20 2024
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 20 errors, 8 warnings
+    Error: Peak virtual memory: 4879 megabytes
+    Error: Processing ended: Fri Dec 13 08:59:52 2024
     Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:07
+    Error: Total CPU time (on all processors): 00:00:11
 
 

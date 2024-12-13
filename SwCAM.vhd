@@ -8,9 +8,8 @@ entity SwCAM is --simple cam to buffer;
     port (
         main_clk    :   in  std_logic;
         main_rst    :   in  std_logic;
-        r_bit       :   inout  std_logic;
-        w_bit       :   inout  std_logic;
-        mac_in      :   in  std_logic_vector(47 downto 0);
+        rw_bit      :   in  std_logic;
+        mac_find    :   in  std_logic_vector(47 downto 0);
         port_out    :   out std_logic_vector(3 downto 0); --assuming a switch with max 24 ethernet-port, so max bit is 2^5
         hit_flag    :   out std_logic_vector(1 downto 0) --if found '11', not found '10';
     );
@@ -106,26 +105,24 @@ architecture rtl of SwCAM is
     signal k : integer := max_port;
 --processes
 begin
-    process (main_clk, main_rst, mac_in)
+    process (main_clk, main_rst, mac_find)
     begin
         if main_rst = '1' then
             state <= LOAD;
             port_out <= (others => '0');
             hit_flag <= "00";
-            r_bit   <= 'Z';
-            w_bit   <= 'Z';
         elsif rising_edge(main_clk) then
             case state is
                 when LOAD =>
                     port_out <= (others => '0');
                     hit_flag <= "00";
-                    macIn <= mac_in;
+                    macIn <= mac_find;
                     fill_cam_from_file(MAC, "macTable.txt");
                     state <= ACTIVE;
-                when ACTIVE =>
-                    if (r_bit = '1') then 
+                when ACTIVE => --constantly in read mode if not write
+                    if (rw_bit = '0') then 
                         state <= READ;
-                    elsif (w_bit = '1') then state <= WRITE;
+                    elsif (rw_bit = '1') then state <= WRITE;
                     else state <= ACTIVE;
                     end if;
                 when READ =>
@@ -136,6 +133,7 @@ begin
                     else state <= ASSIGN;
                     end if;
                 when WRITE => 
+                    state <= ASSIGN;
                     --not now, future update;
                 when ASSIGN =>
                     k <= max_port;
@@ -144,12 +142,6 @@ begin
                     state <= COMPLETE;
                 when COMPLETE =>
                     state <= ACTIVE;
-                    r_bit   <= '0';
-                    w_bit   <= '0';
-                when others =>
-                    state <= LOAD;
-                    r_bit   <= 'Z';
-                    w_bit   <= 'Z';
             end case;
         end if;
     end process;
