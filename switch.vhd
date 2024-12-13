@@ -45,7 +45,7 @@ ARCHITECTURE rtl OF switch IS
             port_id : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
             frame_out : OUT STD_LOGIC_VECTOR(167 DOWNTO 0); -- Changed to OUT
             inout_bit : IN STD_LOGIC; -- generate frame when "1", 0 is idle or read mode
-            data_in : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+            data_in : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
             payload : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
             MAC_dest : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
             MAC_add : IN STD_LOGIC_VECTOR(47 DOWNTO 0)
@@ -57,6 +57,7 @@ ARCHITECTURE rtl OF switch IS
             main_clk : IN STD_LOGIC;
             main_rst : IN STD_LOGIC;
             rw_bit   : IN STD_LOGIC;
+            enable   : IN STD_LOGIC;
             mac_find : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
             port_out : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); --assuming a switch with 24 ethernet-port, so max bit is 2^5
             hit_flag : OUT STD_LOGIC_VECTOR(1 DOWNTO 0) --if found '11', not found '10';
@@ -72,9 +73,10 @@ ARCHITECTURE rtl OF switch IS
         );
     END COMPONENT frame_decoder;
 
-    TYPE State_Type IS (LOAD, ACTIVE, DECODE, SEARCH, HOLD, FORWARD, RECEIVE, COMPLETE);
+    TYPE State_Type IS (LOAD, ACTIVE, DECODE, SEARCH, HOLD, ASSIGN, FORWARD, RECEIVE, COMPLETE);
     SIGNAL state : State_Type := LOAD;
     SIGNAL rw_bit : STD_LOGIC := '0'; -- 0 = read, 1 = write, default read
+    SIGNAL enable : STD_LOGIC := '0';
     SIGNAL temp_hit_flag : STD_LOGIC_VECTOR(1 DOWNTO 0); --if found '11', not found '10';
     SIGNAL buffer_frame : STD_LOGIC_VECTOR(2015 DOWNTO 0) := (others => '0'); --size  of 12 frame
     SIGNAL mac_find : STD_LOGIC_VECTOR(47 DOWNTO 0); -- decoded
@@ -96,12 +98,14 @@ ARCHITECTURE rtl OF switch IS
     --for assignments
     SIGNAL zeros : STD_LOGIC_VECTOR(167 DOWNTO 0) := (OTHERS => '0');
     SIGNAL buffer_index : integer := 1;
+    SIGNAL hold_count   : integer := 2;
     CONSTANT port_num : integer := 3;
 BEGIN
     SwCAM1 : SwCAM PORT MAP(
         main_clk => clk,
         main_rst => reset,
         rw_bit => rw_bit,
+        enable => enable,
         mac_find => mac_find,
         port_out => temp_dest_port,
         hit_flag => temp_hit_flag
@@ -184,13 +188,13 @@ BEGIN
                     IF (decode_frame = zeros) THEN
                         state <= COMPLETE;
                     ELSIF (decode_frame(167) = 'U') THEN
-                        state <= COMPLETE;
+                        state <= LOAD;
                     ELSE
                         state <= SEARCH;
                     END IF;
                     buffer_frame(2015 DOWNTO 0) <= buffer_frame(1847 DOWNTO 0) & zeros; --shift left
-                    buffer_index <= buffer_index + 1;
                 WHEN SEARCH =>
+                    enable <= '1';
                     temp_src_port <= STD_LOGIC_VECTOR(to_unsigned(buffer_index, 4));
                     if (rw_bit_in = '1') then
                         rw_bit <= '1';
@@ -198,6 +202,13 @@ BEGIN
                     end if;
                     state <= HOLD;
                 WHEN HOLD =>
+                    if (hold_count = 1) then
+                        state <= ASSIGN;
+                    else state <= HOLD;
+                    end if;
+                    hold_count <= hold_count - 1;
+                WHEN ASSIGN => 
+                    hold_count <= 2;
                     --assign
                     fa01_FrameOut <= temp_fa01_FrameOut;
                     fa02_FrameOut <= temp_fa02_FrameOut;
@@ -205,6 +216,7 @@ BEGIN
                     --add ports in the future
                     src_port <= temp_src_port;
                     dest_port <= temp_dest_port;
+                    dest_mac <= mac_find;
                     state <= FORWARD;
                 WHEN FORWARD =>
                     output_payload <= temp_payload;
@@ -253,12 +265,14 @@ BEGIN
                 WHEN RECEIVE =>
                     state <= COMPLETE;
                 WHEN COMPLETE =>
+                    enable <= '0';
                     rw_bit <= '0'; --write behavior not set
                     IF (buffer_index = port_num) THEN
                         state <= LOAD;
                     ELSE
                         state <= ACTIVE;
                     END IF;
+                    buffer_index <= buffer_index + 1;
             END CASE;
         END IF;
     END PROCESS;

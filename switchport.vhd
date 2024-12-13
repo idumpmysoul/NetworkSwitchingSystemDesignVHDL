@@ -10,7 +10,7 @@ ENTITY switchport IS
         port_id : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
         frame_out : OUT STD_LOGIC_VECTOR(167 DOWNTO 0); -- Changed to OUT
         inout_bit : IN STD_LOGIC; -- generate frame when "1", 0 is idle or read mode
-        data_in : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        data_in : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         payload : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         MAC_dest : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
         MAC_add : IN STD_LOGIC_VECTOR(47 DOWNTO 0)

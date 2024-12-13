@@ -8,6 +8,7 @@ entity SwCAM is --simple cam to buffer;
     port (
         main_clk    :   in  std_logic;
         main_rst    :   in  std_logic;
+        enable      :   in  std_logic;
         rw_bit      :   in  std_logic;
         mac_find    :   in  std_logic_vector(47 downto 0);
         port_out    :   out std_logic_vector(3 downto 0); --assuming a switch with max 24 ethernet-port, so max bit is 2^5
@@ -116,13 +117,15 @@ begin
                 when LOAD =>
                     port_out <= (others => '0');
                     hit_flag <= "00";
-                    macIn <= mac_find;
                     fill_cam_from_file(MAC, "macTable.txt");
                     state <= ACTIVE;
                 when ACTIVE => --constantly in read mode if not write
-                    if (rw_bit = '0') then 
-                        state <= READ;
-                    elsif (rw_bit = '1') then state <= WRITE;
+                    macIn <= mac_find;
+                    if (enable = '1') then
+                        if (rw_bit = '0') then 
+                            state <= READ;
+                        else state <= WRITE;
+                        end if;
                     else state <= ACTIVE;
                     end if;
                 when READ =>
