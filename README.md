@@ -11,7 +11,8 @@ Rangkaian ini memiliki 5 komponen yang akan berinteraksi satu sama lain, yaitu S
 
 ## State Diagram
 
-![picture 0](https://i.imgur.com/JouJtAU.jpeg)  
+![picture 3](https://i.imgur.com/QkMjixY.jpeg)  
+
 
 Program ini memiliki 8 State. Antara lain LOAD, yang berfungsi untuk mengisi buffer dengan frame di switchport. ACTIVE merupakan state ketika switch sudah dalam keadaan aktif. DECODE merupakan state ketika switch menerima input frame dan memecahkan frame tersebut menjadi data-data seperti payload, dest. address, dan source address. SEARCH merupakan state ketika switch mencari port yang mac addressnya sesuai dengan mac address tujuan pada frame yang masuk. HOLD merupakan state ketika switch menahan data dalam signal buffer. FORWARD merupakan state ketika ada port yang ingin mengirim frame pada port lain. RECEIVE merupakan state ketika terdapat port yang menerima input dari port lain. Complete merupakan state ketika seluruh operasi telah selesai.
 
