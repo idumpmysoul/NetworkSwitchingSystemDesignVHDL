@@ -228,12 +228,12 @@ BEGIN
 
                         IF (temp_src_port /= "0010") THEN
                             fa02_DataIn <= temp_payload;
-                            temp_fa01_DataIn <= temp_payload;
+                            temp_fa02_DataIn <= temp_payload;
                         END IF;
 
                         IF (temp_src_port /= "0011") THEN
                             fa03_DataIn <= temp_payload;
-                            temp_fa01_DataIn <= temp_payload;
+                            temp_fa03_DataIn <= temp_payload;
                         END IF;
                         --add another conditions for port id's as new ports added.
                     ELSIF (temp_hit_flag = "11") THEN

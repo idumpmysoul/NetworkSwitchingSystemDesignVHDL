@@ -94,6 +94,7 @@ architecture rtl of SwCAM is
                 portoutd := std_logic_vector(to_unsigned(i, 4));
                 hitd := "11";
                 exit; -- exit the loop if found
+            else hitd := "00";
             end if;
         end loop;
         if (hitd = "00") then 
