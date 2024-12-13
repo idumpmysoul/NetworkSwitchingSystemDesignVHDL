@@ -1,13 +1,13 @@
-LIBRARY IEEE;
-USE IEEE.std_logic_1164.ALL;
-USE IEEE.numeric_std.ALL;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
 
-ENTITY tb_switch IS
-END ENTITY tb_switch;
+ENTITY switch_tb IS
+END ENTITY switch_tb;
 
-ARCHITECTURE behavior OF tb_switch IS
+ARCHITECTURE behavior OF switch_tb IS
 
-    -- Component declaration for the unit under test (UUT)
+    -- Component Declaration for the Unit Under Test (UUT)
     COMPONENT switch
         PORT (
             clk : IN STD_LOGIC;
@@ -40,7 +40,7 @@ ARCHITECTURE behavior OF tb_switch IS
         );
     END COMPONENT;
 
-    -- Signals to connect to UUT
+    -- Signals for the UUT
     SIGNAL clk : STD_LOGIC := '0';
     SIGNAL reset : STD_LOGIC := '0';
     SIGNAL rw_bit_in : STD_LOGIC := '0';
@@ -105,7 +105,7 @@ BEGIN
         fa03_FrameOut => fa03_FrameOut
     );
 
-    -- Clock process
+    -- Clock process definition
     clk_process : PROCESS
     BEGIN
         clk <= '0';
@@ -117,34 +117,31 @@ BEGIN
     -- Stimulus process
     stim_proc: PROCESS
     BEGIN
-        -- Reset the system
+        -- Reset the switch
         reset <= '1';
         WAIT FOR 20 ns;
         reset <= '0';
 
-        -- Test frame on port fa01
-        fa01_MAC <= X"000A0B0C0D0E";
+        -- Test case 1: Sending a frame from port 1
+        fa01_MAC <= x"112233445566";
         fa01_InoutBit <= '1';
-        fa01_Payload <= X"AA";
-        fa01_DestMac <= X"001A1B1C1D1E";
+        fa01_Payload <= x"AA";
+        fa01_DestMac <= x"AABBCCDDEEFF";
+        WAIT FOR 50 ns;
 
-        WAIT FOR 100 ns;
-
-        -- Test frame on port fa02
-        fa02_MAC <= X"000F1F2F3F4F";
+        -- Test case 2: Sending a frame from port 2
+        fa02_MAC <= x"223344556677";
         fa02_InoutBit <= '1';
-        fa02_Payload <= X"BB";
-        fa02_DestMac <= X"002A2B2C2D2E";
+        fa02_Payload <= x"BB";
+        fa02_DestMac <= x"FFAABBCCDDEE";
+        WAIT FOR 50 ns;
 
-        WAIT FOR 100 ns;
-
-        -- Test frame on port fa03
-        fa03_MAC <= X"001E2E3E4E5E";
+        -- Test case 3: Broadcast scenario
+        fa03_MAC <= x"334455667788";
         fa03_InoutBit <= '1';
-        fa03_Payload <= X"CC";
-        fa03_DestMac <= X"003A3B3C3D3E";
-
-        WAIT FOR 200 ns;
+        fa03_Payload <= x"CC";
+        fa03_DestMac <= x"FFFFFFFFFFFF";
+        WAIT FOR 50 ns;
 
         -- End simulation
         WAIT;
