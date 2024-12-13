@@ -96,12 +96,12 @@ R20
 R12
 R13
 Eswcam
-Z21 w1734050870
+Z21 w1734057897
 Z22 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 R1
 R2
 R3
-!i122 157
+!i122 203
 R4
 Z23 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd
 Z24 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd
@@ -111,9 +111,9 @@ Vnk?WTElURU6egCRQ3NO5X2
 !s100 CkQiL0XAd=PD`D[A;<:U51
 R7
 32
-Z25 !s110 1734051986
+Z25 !s110 1734060714
 !i10b 1
-Z26 !s108 1734051986.000000
+Z26 !s108 1734060714.000000
 Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd|
 Z28 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/SwCAM.vhd|
 !i113 1
@@ -124,12 +124,12 @@ R22
 R1
 R2
 R3
-DEx4 work 5 swcam 0 22 nk?WTElURU6egCRQ3NO5X2
-!i122 157
+Z29 DEx4 work 5 swcam 0 22 nk?WTElURU6egCRQ3NO5X2
+!i122 203
 l107
-L18 131
-V_1N6lzlma1@mhBn4Gl>X]3
-!s100 5=482>V_DC?l3hkX40WCV0
+Z30 L18 131
+VT9k9UYcDkf1S8z^M:Ke?T1
+!s100 >MIhe7@Rn[1cZlk4hnmcW1
 R7
 32
 R25
@@ -141,25 +141,25 @@ R28
 R12
 R13
 Eswitch
-Z29 w1734060145
+Z31 w1734060705
 R1
 R2
 R3
-!i122 200
+!i122 202
 R4
-Z30 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd
-Z31 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd
+Z32 8A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd
+Z33 FA:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd
 l0
 L5 1
 VKg>Mj^D1Pb>Z:@oc?N=Vk2
 !s100 MkPC?AfKh]iX5QnOUYZA^3
 R7
 32
-Z32 !s110 1734060147
+Z34 !s110 1734060707
 !i10b 1
-Z33 !s108 1734060147.000000
-Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd|
-Z35 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd|
+Z35 !s108 1734060707.000000
+Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd|
+Z37 !s107 A:/0-COLLEGE/Term3/Perancangan Sistem Digital/FinPro/switch.vhd|
 !i113 1
 R12
 R13
@@ -167,19 +167,19 @@ Artl
 R1
 R2
 R3
-Z36 DEx4 work 6 switch 0 22 Kg>Mj^D1Pb>Z:@oc?N=Vk2
-!i122 200
+DEx4 work 6 switch 0 22 Kg>Mj^D1Pb>Z:@oc?N=Vk2
+!i122 202
 l100
-Z37 L41 225
-V2hV`Y4UmSj=9emJCFEezQ2
-!s100 @n3Z8Hhc:bNnPJ]QicTHh2
+L41 225
+VKA]m56>QY1j0Ril80MGgK3
+!s100 fPRRU_d0=l1Mm:KL71PY31
 R7
 32
-R32
-!i10b 1
-R33
 R34
+!i10b 1
 R35
+R36
+R37
 !i113 1
 R12
 R13

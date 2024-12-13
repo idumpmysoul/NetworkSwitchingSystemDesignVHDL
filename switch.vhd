@@ -182,9 +182,9 @@ BEGIN
                     state <= DECODE;
                 WHEN DECODE =>
                     IF (decode_frame = zeros) THEN
-                        state <= complete;
+                        state <= COMPLETE;
                     ELSIF (decode_frame(167) = 'U') THEN
-                        state <= ACTIVE;
+                        state <= COMPLETE;
                     ELSE
                         state <= SEARCH;
                     END IF;
