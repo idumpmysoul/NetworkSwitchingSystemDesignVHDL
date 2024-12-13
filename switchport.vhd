@@ -54,6 +54,10 @@ BEGIN
                     tempPayload <= payload;
                     frame_ready <= '1'; -- Mark frame as ready to update
                 WHEN OTHERS => 
+                    tempDest <= (others=> '0');
+                    tempAdd <= (others=> '0');
+                    tempPayload <= (others=> '0');
+                    frame_ready <= '0'; 
             END CASE;
         END IF;
         -- Update frame_out based on frame_ready signal

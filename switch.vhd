@@ -75,7 +75,7 @@ ARCHITECTURE rtl OF switch IS
     TYPE State_Type IS (LOAD, ACTIVE, DECODE, SEARCH, HOLD, FORWARD, RECEIVE, COMPLETE);
     SIGNAL state : State_Type := LOAD;
     SIGNAL rw_bit : STD_LOGIC := '0'; -- 0 = read, 1 = write, default read
-    SIGNAL hit_flag : STD_LOGIC_VECTOR(1 DOWNTO 0); --if found '11', not found '10';
+    SIGNAL temp_hit_flag : STD_LOGIC_VECTOR(1 DOWNTO 0); --if found '11', not found '10';
     SIGNAL buffer_frame : STD_LOGIC_VECTOR(2015 DOWNTO 0) := (others => '0'); --size  of 12 frame
     SIGNAL mac_find : STD_LOGIC_VECTOR(47 DOWNTO 0); -- decoded
     SIGNAL decode_frame : STD_LOGIC_VECTOR(167 DOWNTO 0); -- to decode
@@ -104,7 +104,7 @@ BEGIN
         rw_bit => rw_bit,
         mac_find => mac_find,
         port_out => temp_dest_port,
-        hit_flag => hit_flag
+        hit_flag => temp_hit_flag
     );
 
     FrameDecoder : frame_decoder PORT MAP(
@@ -183,10 +183,13 @@ BEGIN
                 WHEN DECODE =>
                     IF (decode_frame = zeros) THEN
                         state <= complete;
+                    ELSIF (decode_frame(167) = 'U') THEN
+                        state <= ACTIVE;
                     ELSE
                         state <= SEARCH;
                     END IF;
                     buffer_frame(2015 DOWNTO 0) <= buffer_frame(1847 DOWNTO 0) & zeros; --shift left
+                    buffer_index <= buffer_index + 1;
                 WHEN SEARCH =>
                     temp_src_port <= STD_LOGIC_VECTOR(to_unsigned(buffer_index, 4));
                     if (rw_bit_in = '1') then
@@ -195,38 +198,50 @@ BEGIN
                     end if;
                     state <= HOLD;
                 WHEN HOLD =>
+                    --assign
+                    fa01_FrameOut <= temp_fa01_FrameOut;
+                    fa02_FrameOut <= temp_fa02_FrameOut;
+                    fa03_FrameOut <= temp_fa03_FrameOut;
+                    --add ports in the future
                     src_port <= temp_src_port;
+                    dest_port <= temp_dest_port;
                     state <= FORWARD;
                 WHEN FORWARD =>
                     output_payload <= temp_payload;
-                    IF (hit_flag = "10") THEN --broadcast, except to source port.
+                    IF (temp_hit_flag = "10") THEN --broadcast, except to source port.
                         IF (temp_src_port /= "0001") THEN
                             fa01_DataIn <= temp_payload;
+                            temp_fa01_DataIn <= temp_payload;
                         END IF;
 
                         IF (temp_src_port /= "0010") THEN
                             fa02_DataIn <= temp_payload;
+                            temp_fa01_DataIn <= temp_payload;
                         END IF;
 
                         IF (temp_src_port /= "0011") THEN
                             fa03_DataIn <= temp_payload;
+                            temp_fa01_DataIn <= temp_payload;
                         END IF;
                         --add another conditions for port id's as new ports added.
-                    ELSIF (hit_flag = "11") THEN
+                    ELSIF (temp_hit_flag = "11") THEN
                         CASE temp_dest_port IS
                             WHEN "0001" =>
                                 IF (temp_src_port /= "0001") THEN
                                     fa01_DataIn <= temp_payload;
+                                    temp_fa01_DataIn <= temp_payload;
                                 END IF;
 
                             WHEN "0010" =>
                                 IF (temp_src_port /= "0010") THEN
                                     fa02_DataIn <= temp_payload;
+                                    temp_fa01_DataIn <= temp_payload;
                                 END IF;
 
                             WHEN "0011" =>
                                 IF (temp_src_port /= "0011") THEN
                                     fa03_DataIn <= temp_payload;
+                                    temp_fa01_DataIn <= temp_payload;
                                 END IF;
                         --add another conditions for port id's as new ports added.
 
@@ -244,7 +259,6 @@ BEGIN
                     ELSE
                         state <= ACTIVE;
                     END IF;
-                    buffer_index <= buffer_index + 1;
             END CASE;
         END IF;
     END PROCESS;

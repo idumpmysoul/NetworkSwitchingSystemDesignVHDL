@@ -105,7 +105,7 @@ architecture rtl of SwCAM is
     signal k : integer := max_port;
 --processes
 begin
-    process (main_clk, main_rst, mac_find)
+    process (main_clk, mac_find)
     begin
         if main_rst = '1' then
             state <= LOAD;
