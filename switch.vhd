@@ -268,8 +268,10 @@ BEGIN
                 WHEN COMPLETE =>
                     enable <= '0';
                     rw_bit <= '0'; --write behavior not set
-                    state <= ACTIVE;
                     buffer_index <= buffer_index + 1;
+                    if (buffer_index = port_num) then state <= LOAD;
+                    else state <= ACTIVE;
+                    end if;
             END CASE;
         END IF;
     END PROCESS;
